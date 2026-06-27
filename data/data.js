@@ -19,7 +19,10 @@ const STATUS = [
   { item: "מלון ניו יורק",            state: "TBD", note: "מידטאון, קרוב ל-MSG" },
   { item: "מלון בוסטון",              state: "TBD", note: "1–2 לילות" },
   { item: "כרטיס קורטסייד (משחק 1)",   state: "TBD", note: "ייסגר אחרי פרסום הלוח (אוגוסט)" },
-  { item: "כרטיסי 2 משחקים נוספים",    state: "TBD", note: "יציע תחתון" },
+  { item: "כרטיס ניקס @ MSG",          state: "TBD", note: "יציע תחתון" },
+  { item: "כרטיס 76ers @ פילדלפיה",    state: "TBD", note: "טיול יום מניו יורק — יציע תחתון" },
+  { item: "כרטיס סלטיקס @ בוסטון",      state: "TBD", note: "יציע תחתון + High-Five Tunnel" },
+  { item: "רכבת NYC↔פילדלפיה",        state: "TBD", note: "Amtrak/אוטובוס, ~1.5 שעות לכל כיוון" },
   { item: "חוויות על הפרקט / High-Five", state: "TBD", note: "מול מחלקות הקבוצות" },
   { item: "ESTA (×3)",                state: "TBD", note: "$21 לאדם — לפני הטיסות" },
   { item: "ביטוח נסיעות",             state: "TBD", note: "חובה — אין החזרים על כרטיסים" }
@@ -31,7 +34,7 @@ const TRIP = [
     day:1, date:"4.12", weekday:"שישי", city:"ניו יורק", type:"הגעה",
     title:"נחיתה בניו יורק",
     flight:{ dir:"הלוך · TLV → NYC", airline:"Delta (ישירה)", flightNo:"TBD", dep:"TBD", arr:"TBD", pnr:"TBD", price:"$854 לנוסע · הלוך-חזור ($2,562 ל-3)", status:"TBD" },
-    hotel:{ name:"TBD", area:"מידטאן מנהטן", checkin:"4.12", checkout:"8.12", nights:4, confirmation:"TBD", pricePerNight:"TBD", status:"TBD" },
+    hotel:{ name:"TBD", area:"מידטאן מנהטן", checkin:"4.12", checkout:"9.12", nights:5, confirmation:"TBD", pricePerNight:"TBD", status:"TBD" },
     activities:["נחיתה, מעבר ביקורת גבולות (ESTA), הגעה למלון","התארגנות ומנוחה"],
     notes:"מומלץ לתאם נחיתה לפני כניסת שבת. ערב חנוכה ראשון — הדלקת נר ראשון."
   },
@@ -60,15 +63,24 @@ const TRIP = [
     notes:"היעד: משחק נטס-נגד-ניקס כדי לראות את שחקני הניקס מגובה הפרקט. תלוי בלוח."
   },
   {
-    day:5, date:"8.12", weekday:"שלישי", city:"מעבר לבוסטון", type:"מעבר",
-    title:"מעבר לבוסטון (רכבת Amtrak)",
-    transport:{ mode:"רכבת Amtrak / טיסה קצרה", route:"NYC → Boston", duration:"~4 שעות ברכבת", ref:"TBD", price:"TBD", status:"TBD" },
-    hotel:{ name:"TBD", area:"בוסטון (קרוב ל-TD Garden)", checkin:"8.12", checkout:"10.12", nights:2, confirmation:"TBD", pricePerNight:"TBD", status:"TBD" },
-    activities:["נסיעה לבוסטון, סידור במלון","ערב חופשי — Quincy Market / Faneuil Hall"],
-    notes:"חלופה: לדלג על בוסטון ולהוסיף פילדלפיה (76ers). להחליט אחרי הלוח."
+    day:5, date:"8.12", weekday:"שלישי", city:"פילדלפיה (טיול יום)", type:"משחק",
+    title:"טיול יום לפילדלפיה — משחק 76ers",
+    transport:{ mode:"רכבת Amtrak / אוטובוס (הלוך-חזור)", route:"NYC ⇄ פילדלפיה", duration:"~1.5 שעות לכל כיוון", ref:"TBD", price:"TBD", status:"TBD" },
+    hotel:{ name:"TBD", area:"חוזרים ללינה במידטאן מנהטן", status:"TBD" },
+    game:{ tier:"יציע תחתון", matchup:"76ers מול TBD (אידיאלית מול הניקס)", arena:"Xfinity Mobile Arena (Wells Fargo לשעבר), פילדלפיה", datetime:"TBD", section:"TBD", seats:"TBD", price:"TBD", status:"TBD" },
+    activities:["בוקר: רכבת לפילדלפיה, צ'יזסטייק + Reading Terminal Market","ערב: משחק 76ers, וחזרה ברכבת לניו יורק"],
+    notes:"טיול יום — בלי החלפת מלון. הקלף המנצח: אם הלוח ייתן ניקס-בפילדלפיה, רואים את הניקס שוב. יום עמוס — אפשר לוותר אם מעדיפים קצב רגוע."
   },
   {
-    day:6, date:"9.12", weekday:"רביעי", city:"בוסטון", type:"משחק",
+    day:6, date:"9.12", weekday:"רביעי", city:"מעבר לבוסטון", type:"מעבר",
+    title:"מעבר לבוסטון (רכבת Amtrak)",
+    transport:{ mode:"רכבת Amtrak / טיסה קצרה", route:"NYC → Boston", duration:"~4 שעות ברכבת", ref:"TBD", price:"TBD", status:"TBD" },
+    hotel:{ name:"TBD", area:"בוסטון (קרוב ל-TD Garden)", checkin:"9.12", checkout:"11.12", nights:2, confirmation:"TBD", pricePerNight:"TBD", status:"TBD" },
+    activities:["נסיעה לבוסטון, סידור במלון","ערב חופשי — Quincy Market / Faneuil Hall"],
+    notes:""
+  },
+  {
+    day:7, date:"10.12", weekday:"חמישי", city:"בוסטון", type:"משחק",
     title:"סלטיקס @ TD Garden + High-Five Tunnel",
     hotel:{ name:"TBD", area:"בוסטון", status:"TBD" },
     game:{ tier:"יציע תחתון", matchup:"סלטיקס מול TBD", arena:"TD Garden, בוסטון", datetime:"TBD", section:"TBD", seats:"TBD", price:"TBD", status:"TBD" },
@@ -77,19 +89,11 @@ const TRIP = [
     notes:"לתאם את חוויית ה-Tunnel מראש מול מחלקת הקבוצות של הסלטיקס."
   },
   {
-    day:7, date:"10.12", weekday:"חמישי", city:"בוסטון → ניו יורק", type:"מעבר",
-    title:"סיור בוסטון וחזרה לניו יורק",
+    day:8, date:"11.12", weekday:"שישי", city:"בוסטון → ניו יורק", type:"מעבר",
+    title:"חזרה לניו יורק + זמן חופשי",
     transport:{ mode:"רכבת Amtrak / טיסה קצרה", route:"Boston → NYC", duration:"~4 שעות", ref:"TBD", price:"TBD", status:"TBD" },
-    hotel:{ name:"TBD", area:"מידטאן מנהטן", checkin:"10.12", checkout:"12.12", nights:2, confirmation:"TBD", pricePerNight:"TBD", status:"TBD" },
-    activities:["בוקר: Freedom Trail / אוניברסיטת הרווארד","חזרה לניו יורק לערב"],
-    notes:""
-  },
-  {
-    day:8, date:"11.12", weekday:"שישי", city:"ניו יורק", type:"רזרבה",
-    title:"יום רזרבה / קניות בניו יורק",
-    hotel:{ name:"TBD", area:"מידטאן מנהטן", status:"TBD" },
-    game:{ tier:"אופציונלי", matchup:"משחק רזרבי (ניקס/נטס) — TBD", arena:"TBD", datetime:"TBD", section:"TBD", seats:"TBD", price:"TBD", status:"TBD (אופציונלי)" },
-    activities:["משחק רביעי אופציונלי אם יש בלוח","קניות: Fifth Avenue / SoHo, אטרקציה (Top of the Rock)"],
+    hotel:{ name:"TBD", area:"מידטאן מנהטן", checkin:"11.12", checkout:"12.12", nights:1, confirmation:"TBD", pricePerNight:"TBD", status:"TBD" },
+    activities:["בוקר: Freedom Trail / הרווארד, ואז חזרה לניו יורק","אחר הצהריים: קניות (Fifth Avenue) / אטרקציה אחרונה"],
     notes:"יום שישי — להתארגן לפני כניסת שבת."
   },
   {

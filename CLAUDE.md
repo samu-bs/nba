@@ -47,6 +47,11 @@ a large group tour.
 - Seats: **At least ONE courtside (floor) game CONFIRMED** — plan: Nets-vs-Knicks
   courtside at Barclays (~$900–1,400 pp) + lower-bowl for other games. Courtside
   doubles as best player-proximity. MSG Knicks courtside = upgrade option only.
+- Cities: **NYC + Philadelphia (76ers day-trip) + Boston CONFIRMED** — 4 games total
+  (Knicks @ MSG, Nets-vs-Knicks courtside @ Barclays, 76ers @ Philly day-trip, Celtics @ Boston).
+  All games on weeknights (avoids Shabbat). Philly = day-trip from NYC, no hotel change.
+- Flights: **Delta nonstop TLV↔JFK ~$854 pp** quoted (used as budget base). Not booked yet.
+- Revised budget: **~$4,500–5,900 pp** (still within range; nonstop flight offsets Philly).
 - Plan doc: `תוכנית-טיול-בר-מצווה-NBA.md` in this folder.
 
 ### Player-access strategy (key insight)
@@ -57,7 +62,7 @@ Tunnel in Boston], (b) DIY autograph hunting at team hotel/shootaround/arena, (c
 paid meet&greet as a splurge.
 
 ## Still-open questions
-1. Add Philadelphia (76ers) or keep NYC + Boston only?
+1. ✅ RESOLVED — Philadelphia added (76ers day-trip from NYC).
 2. Want a shortlist of recommended Midtown hotels near MSG?
 3. How much to invest in paid meet&greet (layer C), if at all?
 4. Are the extra parent+child still potentially joining? (affects hotels/transport)
