@@ -15,7 +15,7 @@ const META = {
 
 /* ---- סטטוס כללי של ההזמנות (לוח מחוונים בעמוד הבית) ---- */
 const STATUS = [
-  { item: "טיסות TLV↔NYC",            state: "TBD", note: "ניתן להזמין כבר עכשיו — תעריף גמיש" },
+  { item: "טיסות TLV↔NYC",            state: "TBD", note: "הצעה: Delta ישיר ~$854 לנוסע ($2,562 ל-3) — לאמת תאריכים/כבודה" },
   { item: "מלון ניו יורק",            state: "TBD", note: "מידטאון, קרוב ל-MSG" },
   { item: "מלון בוסטון",              state: "TBD", note: "1–2 לילות" },
   { item: "כרטיס קורטסייד (משחק 1)",   state: "TBD", note: "ייסגר אחרי פרסום הלוח (אוגוסט)" },
@@ -30,7 +30,7 @@ const TRIP = [
   {
     day:1, date:"4.12", weekday:"שישי", city:"ניו יורק", type:"הגעה",
     title:"נחיתה בניו יורק",
-    flight:{ dir:"הלוך · TLV → NYC", airline:"TBD", flightNo:"TBD", dep:"TBD", arr:"TBD", pnr:"TBD", price:"TBD", status:"TBD" },
+    flight:{ dir:"הלוך · TLV → NYC", airline:"Delta (ישירה)", flightNo:"TBD", dep:"TBD", arr:"TBD", pnr:"TBD", price:"$854 לנוסע · הלוך-חזור ($2,562 ל-3)", status:"TBD" },
     hotel:{ name:"TBD", area:"מידטאן מנהטן", checkin:"4.12", checkout:"8.12", nights:4, confirmation:"TBD", pricePerNight:"TBD", status:"TBD" },
     activities:["נחיתה, מעבר ביקורת גבולות (ESTA), הגעה למלון","התארגנות ומנוחה"],
     notes:"מומלץ לתאם נחיתה לפני כניסת שבת. ערב חנוכה ראשון — הדלקת נר ראשון."
@@ -95,7 +95,7 @@ const TRIP = [
   {
     day:9, date:"12.12", weekday:"שבת", city:"טיסה חזרה", type:"חזרה",
     title:"טיסה חזרה לישראל",
-    flight:{ dir:"חזור · NYC → TLV", airline:"TBD", flightNo:"TBD", dep:"TBD", arr:"TBD (13.12)", pnr:"TBD", price:"TBD", status:"TBD" },
+    flight:{ dir:"חזור · NYC → TLV", airline:"Delta (ישירה)", flightNo:"TBD", dep:"TBD", arr:"TBD (יום למחרת)", pnr:"TBD", price:"כלול בהלוך-חזור ($854 לנוסע)", status:"TBD" },
     activities:["פינוי מלון (שמירת מזוודות אם הטיסה בערב)","נסיעה לשדה התעופה (JFK/EWR)"],
     notes:"טיסת מוצ\"ש — תלוי בזמינות. לאמת שעת המראה."
   }
