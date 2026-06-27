@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>תכנון והחלטות · טיול בר מצווה NBA</title>
+<style>
+  :root{
+    --blue:#1d428a; --orange:#f58426; --navy:#0b1f3a;
+    --bg:#f4f6fb; --gray:#6b7685; --text:#1a2233; --card:#fff;
+    --shadow:0 4px 14px rgba(29,66,138,.10);
+    --tbd-bg:#fff4e6; --tbd-bd:#f6c98a; --tbd-tx:#b3690f;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Segoe UI","Helvetica Neue",Arial,"Noto Sans Hebrew",sans-serif;background:var(--bg);color:var(--text);line-height:1.65;}
+  a{color:var(--blue);}
+  header{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,.2);position:sticky;top:0;z-index:1000;}
+  header .brand{font-weight:800;font-size:18px;}
+  nav a{color:#fff;text-decoration:none;margin-inline-start:18px;font-size:15px;opacity:.9;border-bottom:2px solid transparent;padding-bottom:3px;}
+  nav a:hover,nav a.active{opacity:1;border-bottom-color:var(--orange);}
+  .hero{background:linear-gradient(135deg,var(--blue),#13306b);color:#fff;padding:40px 20px 34px;text-align:center;}
+  .hero h1{margin:0 0 8px;font-size:28px;}
+  .hero p{margin:0 auto;max-width:680px;font-size:15px;opacity:.94;}
+  .wrap{max-width:900px;margin:0 auto;padding:26px 16px 60px;}
+  section{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:20px 22px;margin-bottom:20px;scroll-margin-top:74px;}
+  h2{font-size:21px;color:var(--blue);margin:0 0 14px;border-inline-start:5px solid var(--orange);padding-inline-start:12px;}
+  h3{font-size:16.5px;color:var(--navy);margin:18px 0 8px;}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0;}
+  th,td{border:1px solid #e2e7f0;padding:8px 10px;text-align:right;}
+  th{background:#eef2f8;color:var(--navy);font-weight:700;}
+  tr:nth-child(even) td{background:#f8fafd;}
+  .rec{background:#e6f6ec;border:1px solid #a6dcb8;border-radius:12px;padding:12px 16px;font-size:14.5px;}
+  .rec::before{content:"✅ ";}
+  .warn{background:var(--tbd-bg);border:1px solid var(--tbd-bd);color:var(--tbd-tx);border-radius:12px;padding:12px 16px;font-size:14px;}
+  .warn::before{content:"⏳ ";}
+  .pill{display:inline-block;background:var(--orange);color:#fff;border-radius:20px;padding:2px 12px;font-size:12.5px;font-weight:700;}
+  ul.clean{margin:8px 0;padding-inline-start:20px;}
+  ul.clean li{margin-bottom:6px;}
+  .tiers{display:grid;gap:12px;}
+  .tier{border:1px solid #e2e7f0;border-radius:12px;padding:13px 15px;}
+  .tier .lbl{font-weight:800;color:var(--blue);}
+  .src{font-size:13px;color:var(--gray);}
+  .src a{display:block;margin-bottom:4px;}
+  footer{text-align:center;color:var(--gray);font-size:13px;padding:24px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">🏀 בר מצווה NBA · חנוכה 2026</div>
+  <nav>
+    <a href="index.html">בית</a>
+    <a href="planning.html" class="active">תכנון</a>
+    <a href="trip.html">תוכנית הטיול</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>🧭 תכנון, דיון והחלטות</h1>
+  <p>החלק הזה מרכז את ההיגיון מאחורי הטיול: בחירת החלון, אסטרטגיית המפגש עם השחקנים, השוואות מחירים ותקציב. ה"תוכנית הטיול" עצמה נמצאת בלשונית נפרדת.</p>
+</div>
+
+<div class="wrap">
+
+  <section id="decisions">
+    <h2>החלטות שכבר נסגרו</h2>
+    <table>
+      <tr><th>נושא</th><th>החלטה</th></tr>
+      <tr><td>האירוע</td><td>בר מצווה לבן בן ה-13</td></tr>
+      <tr><td>נוסעים</td><td>יוסי + 2 בנים (13, 15) — 3 אנשים (+הורה+ילד עדיין TBD)</td></tr>
+      <tr><td>חלון תאריכים</td><td>חנוכה: <b>4–12 בדצמבר 2026</b></td></tr>
+      <tr><td>אזור</td><td>החוף המזרחי — ניו יורק והסביבה</td></tr>
+      <tr><td>קבוצה מועדפת</td><td>ניו יורק ניקס</td></tr>
+      <tr><td>חוויה</td><td>קרבה לפרקט + מפגש עם שחקנים (חובה) · <span class="pill">לפחות משחק קורטסייד אחד</span></td></tr>
+      <tr><td>אופן ארגון</td><td>תכנון עצמאי מותאם אישית (DIY)</td></tr>
+      <tr><td>תקציב</td><td>$3,000–5,000 לאדם (~$9,000–15,000 סה"כ)</td></tr>
+    </table>
+  </section>
+
+  <section id="window">
+    <h2>למה חנוכה ולא אול-סטאר?</h2>
+    <table>
+      <tr><th>קריטריון</th><th>חנוכה (דצמבר 2026)</th><th>אול-סטאר 2027</th></tr>
+      <tr><td>מיקום</td><td>החוף המזרחי (NY/בוסטון)</td><td>פיניקס, אריזונה (מערב)</td></tr>
+      <tr><td>משחקי עונה רגילה</td><td>כן — ניקס/נטס/סלטיקס</td><td>לא — הליגה בהפסקה</td></tr>
+      <tr><td>קרבה לשחקנים</td><td>גבוהה (קורטסייד + חוויות)</td><td>נמוכה, אירוע ראווה</td></tr>
+      <tr><td>מחיר</td><td>בתוך התקציב</td><td>יקר בקיצוניות</td></tr>
+      <tr><td>חופשת בית ספר</td><td>נוחת על חנוכה ✓</td><td>—</td></tr>
+    </table>
+    <div class="rec">חנוכה במזרח נותן בדיוק את מה שביקשתם: משחקי ניקס, קרבה לשחקנים, ובתוך התקציב.</div>
+  </section>
+
+  <section id="players">
+    <h2>אסטרטגיית "לפגוש שחקנים" — לב הטיול 💙</h2>
+    <p>חשוב להיות כֵּנים: <b>מפגש אישי מובטח עם כוכב ניקס יקר ונדיר</b>. לכן נשלב שכבות כדי למקסם סיכוי — בתוך התקציב.</p>
+    <div class="tiers">
+      <div class="tier"><span class="lbl">שכבה א' — חוויות על הפרקט שמזמינים מראש (סיכוי גבוה)</span>
+        <ul class="clean">
+          <li><b>נטס @ Barclays (בניו יורק!):</b> High-Five, זריקה על הפרקט, ופס חימום. במשחק <b>נטס מול ניקס</b> — הבנים רואים את שחקני הניקס מגובה הפרקט. 🎯</li>
+          <li><b>סלטיקס @ TD Garden:</b> High-Five Tunnel — הילדים על הפרקט, כף עם השחקנים אחרי המחצית.</li>
+          <li><b>ניקס @ MSG:</b> תוכנית Fan First וחבילות חוויה (בעיקר קבוצות 9+).</li>
+        </ul>
+      </div>
+      <div class="tier"><span class="lbl">שכבה ב' — ציד אוטוגרפים עצמאי (חינמי, דורש מאמץ)</span>
+        <ul class="clean">
+          <li>מלון הקבוצה ערב לפני (17:00–19:00)</li>
+          <li>שׁוּטֶראַראונד בבוקר המשחק (~9:00–9:30)</li>
+          <li>כניסת השחקנים לאיצטדיון (90–120 ד' לפני) ואחרי המשחק</li>
+        </ul>
+      </div>
+      <div class="tier"><span class="lbl">שכבה ג' — חבילת מפגש בתשלום (מובטח, יקר — אופציונלי)</span>
+        <ul class="clean">
+          <li>ספקים רשמיים: $1,000–5,000 לאדם למפגש+צילום עם שחקן.</li>
+          <li>אירועי חתימות בתשלום של כוכבי ניקס (מאות $) — אם מתקיים בחלון.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:14px"><b>ההמלצה:</b> לבנות על שכבות א'+ב' (קרבה אמיתית, בתקציב), ולשמור את ג' כשדרוג.</p>
+  </section>
+
+  <section id="courtside">
+    <h2>כרטיס על הפרקט (קורטסייד) — אפשר להבטיח!</h2>
+    <p>בניגוד למפגש שחקנים, כרטיס קורטסייד הוא מוצר שאפשר לקנות ולהבטיח. ההגבלה היא מחיר. מחירי עונה רגילה (לכרטיס, ול-3 אנשים למשחק):</p>
+    <table>
+      <tr><th>איצטדיון</th><th>למושב</th><th>ל-3 אנשים (משחק 1)</th><th>הערה</th></tr>
+      <tr><td>נטס — Barclays</td><td>~$870–2,700</td><td>~$2,600–8,100</td><td>הזול בניו יורק; אידיאלי אם נטס-נגד-ניקס</td></tr>
+      <tr><td>סלטיקס — TD Garden</td><td>~$375–1,500</td><td>~$1,100–4,500</td><td>בביקוש נמוך = הכי משתלם; + High-Five Tunnel</td></tr>
+      <tr><td>ניקס — MSG</td><td>~$700–3,000+</td><td>~$2,100–9,000+</td><td>החלום, אבל היקר והנדיר ביותר</td></tr>
+      <tr><td>76ers — פילדלפיה</td><td>~$2,600–3,300</td><td>~$7,800–9,900</td><td>יקר</td></tr>
+    </table>
+    <div class="rec">המלצה: קורטסייד <b>פעם אחת</b> (הכי משתלם בנטס או בסלטיקס בביקוש נמוך), ויציע תחתון בשאר. קורטסייד בניקס ב-MSG נשאר כאופציית שדרוג.</div>
+    <p style="margin-top:10px"><b>בונוס:</b> קורטסייד הוא ממילא המיקום הכי טוב לקרבה לשחקנים — חימום מטר מכם, אפשר להושיט פריט לחתימה.</p>
+  </section>
+
+  <section id="budget">
+    <h2>תקציב משוער (לאדם, 3 נוסעים)</h2>
+    <p>מבנה מומלץ: 3 משחקים — 1 קורטסייד (נטס-נגד-ניקס) + 2 יציע תחתון (ניקס @ MSG, סלטיקס).</p>
+    <table>
+      <tr><th>סעיף</th><th>הערכה לאדם</th><th>הערות</th></tr>
+      <tr><td>טיסות TLV↔NYC (דצמבר)</td><td>$1,100–1,400</td><td>להזמין מוקדם — חנוכה עמוס</td></tr>
+      <tr><td>מלון (~7 לילות NYC + 1–2 בוסטון)</td><td>$900–1,200</td><td>חדר ל-3, מידטאן/קרוב</td></tr>
+      <tr><td><b>כרטיס קורטסייד (משחק 1)</b></td><td><b>$900–1,400</b></td><td>על הפרקט, נטס-נגד-ניקס</td></tr>
+      <tr><td>2 משחקים נוספים (יציע תחתון)</td><td>$350–700</td><td>ניקס @ MSG + סלטיקס</td></tr>
+      <tr><td>חוויות על הפרקט (חימום/High-Five)</td><td>$100–300</td><td>חלק מחבילות הכרטיס</td></tr>
+      <tr><td>תחבורה מקומית + רכבת לבוסטון</td><td>$250–350</td><td>מטרו, אובר, אמטרק</td></tr>
+      <tr><td>אוכל</td><td>$500–800</td><td></td></tr>
+      <tr><td>אטרקציות/קניות/שונות</td><td>$400–600</td><td></td></tr>
+      <tr><td><b>סה"כ לאדם</b></td><td><b>~$4,500–5,750</b></td><td>בקצה העליון של התקציב</td></tr>
+    </table>
+    <div class="warn"><b>איך נשארים מתחת ל-$5K לאדם:</b> קורטסייד בביקוש נמוך/בסלטיקס · 3 משחקים ולא 4 · לוותר על פילדלפיה · מלון סטנדרט. ESTA: $21 לאדם.</div>
+  </section>
+
+  <section id="timeline">
+    <h2>ציר זמן — מה עכשיו מול מה באוגוסט</h2>
+    <div class="warn">לוח ה-NBA הרשמי מתפרסם ~14–21 באוגוסט 2026. עד אז המשחקים והתאריכים המדויקים אינם ידועים.</div>
+    <h3>עכשיו (יוני–אוגוסט)</h3>
+    <ul class="clean">
+      <li>לוודא דרכונים ביומטריים + להגיש ESTA (×3)</li>
+      <li>לעקוב אחרי מחירי טיסות TLV↔NYC לדצמבר ולהזמין (תעריף גמיש)</li>
+      <li>לפנות למחלקות הקבוצות (נטס/סלטיקס) לברר זמינות חוויות הילדים</li>
+      <li>ביטוח נסיעות</li>
+    </ul>
+    <h3>כשהלוח מתפרסם (~אוגוסט)</h3>
+    <ul class="clean">
+      <li>לאתר משחקי בית של ניקס/נטס/סלטיקס בין 4–12 בדצמבר</li>
+      <li>לזהות משחק <b>נטס מול ניקס</b> (הזהב למפגש עם שחקני ניקס)</li>
+      <li>לסגור כרטיסים + חוויות על הפרקט + מלונות</li>
+      <li>לבדוק אם יש אירוע חתימות מתוכנן של כוכב ניקס</li>
+    </ul>
+  </section>
+
+  <section id="open">
+    <h2>שאלות פתוחות</h2>
+    <ul class="clean">
+      <li>להוסיף את פילדלפיה (76ers) או להישאר ניו יורק + בוסטון?</li>
+      <li>רשימת מלונות מומלצים במידטאן ליד MSG?</li>
+      <li>כמה להשקיע בשכבה ג' (מפגש בתשלום), אם בכלל?</li>
+      <li>האם ההורה+ילד הנוספים עדיין על הפרק? (משפיע על מלונות/הסעות)</li>
+    </ul>
+  </section>
+
+  <section id="sources">
+    <h2>מקורות</h2>
+    <div class="src">
+      <a href="https://nbatrips.com/tripshe/" target="_blank">NBATrips — טיולים (השראה)</a>
+      <a href="https://www.nba.com/news/key-dates" target="_blank">מועד פרסום לוח NBA 2026-27</a>
+      <a href="https://www.nba.com/news/phoenix-suns-nba-all-star-2027-official-release" target="_blank">אול-סטאר 2027 בפיניקס</a>
+      <a href="https://www.hebcal.com/holidays/chanukah-2026" target="_blank">תאריכי חנוכה 2026 (Hebcal)</a>
+      <a href="https://www.nba.com/celtics/tickets/groups" target="_blank">Celtics High Five Tunnel</a>
+      <a href="https://www.espn.com/nba/story/_/id/48986912/" target="_blank">מחירי כרטיסי ניקס / קורטסייד (ESPN)</a>
+      <a href="https://nbaexperiences.com/" target="_blank">NBA Experiences — מפגשי שחקנים רשמיים</a>
+    </div>
+  </section>
+
+</div>
+<footer>גרסה 1 · עודכן יוני 2026 · מסמך עבודה — ייסגר סופית אחרי פרסום לוח ה-NBA</footer>
+</body>
+</html>
