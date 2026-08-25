@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>תוכנית שבועית — מינימום ימי לימוד</title>
+<style>
+  :root{
+    --bg:#0f1216; --card:#171b21; --line:#272d36; --txt:#e8ebf0; --muted:#9aa4b2;
+    --nyk:#f58426; --bkn:#b8bfc9; --bos:#43a47a; --phi:#5b8dd9; --accent:#e5a54b;
+    --bad:#e06c6c; --good:#5ec08a;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f6f7f9; --card:#ffffff; --line:#e3e7ec; --txt:#151922; --muted:#5d6672;
+           --nyk:#d2661a; --bkn:#5c646f; --bos:#1f7a52; --phi:#2f5fa8; --accent:#a9761d;
+           --bad:#c0392b; --good:#1f7a52;}
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans Hebrew",Arial,sans-serif;
+       line-height:1.55;padding:24px 16px 56px}
+  .wrap{max-width:920px;margin:0 auto}
+  h1{font-size:27px;margin:0 0 6px;letter-spacing:-.02em}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 24px}
+  h2{font-size:20px;margin:40px 0 6px;letter-spacing:-.01em}
+  h3{font-size:16px;margin:22px 0 6px}
+  .sub2{color:var(--muted);font-size:13.5px;margin:0 0 14px}
+  .sub2 b, .note b{color:var(--txt);font-weight:600}
+  table{width:100%;border-collapse:collapse;background:var(--card);
+        border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14.5px}
+  thead th{text-align:right;font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+           color:var(--muted);font-weight:600;padding:12px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tr.hl td{background:rgba(94,192,138,.09)}
+  .date{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600}
+  .day{color:var(--muted);font-size:12.5px;font-weight:400}
+  .bar{display:inline-block;width:3px;height:15px;border-radius:2px;margin-left:8px;vertical-align:-2px}
+  .tag{font-size:11px;border:1px solid var(--accent);color:var(--accent);
+       border-radius:5px;padding:1px 6px;margin-right:6px;white-space:nowrap;display:inline-block}
+  .tag.hot{border-color:var(--nyk);color:var(--nyk)}
+  .tag.ok{border-color:var(--good);color:var(--good)}
+  .tag.no{border-color:var(--bad);color:var(--bad)}
+  .note{margin-top:18px;font-size:13.5px;color:var(--muted);border-right:3px solid var(--line);padding:2px 12px 2px 0}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .box.rec{border-color:var(--good)}
+  .box h3{margin:0 0 4px}
+  .pill{font-size:11.5px;background:var(--good);color:#fff;border-radius:5px;padding:2px 8px;margin-right:8px;vertical-align:2px}
+  ul{margin:8px 0;padding-right:20px}
+  li{margin:5px 0;font-size:14px}
+  .free{color:var(--muted)}
+  .big{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+  @media (max-width:600px){ thead th:nth-child(5),td:nth-child(5){display:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>תוכנית שבועית — לחסוך ימי לימוד</h1>
+<p class="sub">
+נספח ל<b>המלצה-שינוי-תאריכי-טיסה</b> · 16.8.2026 · שנת הלימודים תשפ״ז, שבוע לימודים א׳–ה׳
+</p>
+
+<p class="sub2">
+בקשת תוכנית קצרה יותר. הבשורה הטובה: <b>קיצור הטיול דווקא <em>משפר</em> את איכות המשחקים</b>,
+כי כל מה שחשוב מרוכז ממילא בשבוע האחרון של דצמבר. במקום להתפרס על 11–13 יום,
+נכנסים בדיוק לחלון שבו הניקס בבית.
+</p>
+
+<h2>ההמלצה החדשה</h2>
+
+<div class="box rec">
+  <h3><span class="pill">מומלץ</span>אפשרות ג׳ — 20.12 עד 28.12</h3>
+  <p class="sub2" style="margin-bottom:12px">
+    8 לילות · <b>4 משחקים</b> · <b>שלושת משחקי הניקס ב-MSG</b> · קורטסייד בברקליס
+  </p>
+  <table>
+    <thead><tr><th>יום</th><th>תאריך</th><th>מה קורה</th><th>שעה</th><th>הערה</th></tr></thead>
+    <tbody>
+      <tr><td>א׳</td><td class="date">20.12</td><td>טיסה TLV→JFK, נחיתה 16:40</td><td>—</td><td class="free">ערב מנוחה במידטאון</td></tr>
+      <tr class="hl"><td>ב׳</td><td class="date">21.12</td><td><span class="bar" style="background:var(--bkn)"></span><b>נטס נגד פורטלנד · ברקליס</b></td><td>19:30</td><td><span class="tag">קורטסייד</span>יריבה בביקוש נמוך = הקורטסייד הזול בחלון</td></tr>
+      <tr><td>ג׳</td><td class="date">22.12</td><td>ניו יורק — פסל החירות / טיימס סקוור / חנות NBA</td><td>—</td><td class="free">יום התאוששות מהג׳ט-לג</td></tr>
+      <tr class="hl"><td>ד׳</td><td class="date">23.12</td><td><span class="bar" style="background:var(--nyk)"></span><b>ניקס נגד יוטה · MSG</b></td><td>19:30</td><td><span class="tag ok">משתלם</span>משחק הניקס הזול מהשלושה</td></tr>
+      <tr><td>ה׳</td><td class="date">24.12</td><td>ערב חג המולד בניו יורק — רוקפלר, סנטרל פארק</td><td>—</td><td class="free">אווירה שלא רואים בשום זמן אחר</td></tr>
+      <tr class="hl"><td>ו׳</td><td class="date">25.12</td><td><span class="bar" style="background:var(--nyk)"></span><b>ניקס נגד סן אנטוניו · MSG</b></td><td>12:00</td><td><span class="tag hot">חג המולד</span>רימאץ׳ גמר ה-NBA · מסתיים ~14:30, כניסת שבת ~16:15</td></tr>
+      <tr><td>ש׳</td><td class="date">26.12</td><td>שבת בניו יורק</td><td>—</td><td class="free">קהילה, סעודות, מנוחה</td></tr>
+      <tr class="hl"><td>א׳</td><td class="date">27.12</td><td><span class="bar" style="background:var(--nyk)"></span><b>ניקס נגד נטס · MSG</b></td><td>18:00</td><td><span class="tag hot">דרבי</span>דרבי ניו יורק</td></tr>
+      <tr><td>ב׳</td><td class="date">28.12</td><td>קניות בבוקר · טיסה JFK→TLV 15:15</td><td>—</td><td class="free">נחיתה ג׳ 29.12 ב-08:50</td></tr>
+    </tbody>
+  </table>
+  <p class="sub2" style="margin:12px 0 0">
+    <b>ימי לימוד שיוחמצו: 8</b> (20–24, 27–29.12) לעומת 10–11 באפשרויות א׳ ו-ב׳.
+  </p>
+</div>
+
+<h2>אם רוצים לקצץ עוד</h2>
+
+<div class="box">
+  <h3>אפשרות ד׳ — 22.12 עד 28.12 · המינימום המוחלט עם ניקס</h3>
+  <ul>
+    <li><b>ג׳ 22.12</b> — נחיתה 16:40</li>
+    <li><b>ד׳ 23.12</b> — <b>ניקס נגד יוטה, MSG 19:30</b></li>
+    <li><b>ה׳ 24.12</b> — ניו יורק, ערב חג המולד</li>
+    <li><b>ו׳ 25.12</b> — <b>ניקס נגד ספרס, MSG 12:00</b> (חג המולד)</li>
+    <li><b>ש׳ 26.12</b> — שבת</li>
+    <li><b>א׳ 27.12</b> — <b>ניקס נגד נטס, MSG 18:00</b> (דרבי)</li>
+    <li><b>ב׳ 28.12</b> — טיסה הביתה</li>
+  </ul>
+  <p class="sub2" style="margin:10px 0 0">
+    6 לילות · <b>6 ימי לימוד</b> · 3 משחקים, כולם ניקס ב-MSG.
+    <br><b>החיסרון המהותי:</b> אין משחק נטס בברקליס בחלון הזה (26.12 נופל בשבת),
+    ולכן <b>הקורטסייד חייב להיות ב-MSG</b> — שם המחיר קופץ ל-$2,500–4,000 לאדם במקום ~$700–1,000 בברקליס.
+    החיסכון של יומיים בבית ספר עולה יותר מהתועלת. <b>לא מומלץ.</b>
+  </p>
+</div>
+
+<div class="box">
+  <h3>אפשרות ה׳ — 10.12 עד 17.12 · הכי מעט ימי לימוד, אבל בלי ניקס</h3>
+  <p class="sub2" style="margin-bottom:8px">
+    זו האפשרות היחידה שמנצלת את חופשת חנוכה (5–12.12) ולכן חוסכת הכי הרבה.
+  </p>
+  <ul>
+    <li><b>ה׳ 10.12</b> — נחיתה <span class="free">(חופשת חנוכה — לא יום לימודים)</span></li>
+    <li><b>ו׳–ש׳ 11–12.12</b> — שבת חנוכה בניו יורק <span class="free">(חופשה)</span></li>
+    <li><b>א׳ 13.12</b> — <b>נטס נגד סלטיקס, ברקליס 15:00</b> ← <span class="tag">קורטסייד</span> משחק פסגה בין שתי קבוצות גדולות</li>
+    <li><b>ב׳ 14.12</b> — רכבת לבוסטון · <b>סלטיקס נגד וויזארדס 19:30</b> · לינה בבוסטון</li>
+    <li><b>ג׳ 15.12</b> — בוסטון בבוקר (הפרקט, פנוויי), חזרה לניו יורק</li>
+    <li><b>ד׳ 16.12</b> — <b>נטס נגד דאלאס, ברקליס 19:30</b></li>
+    <li><b>ה׳ 17.12</b> — טיסה הביתה 15:15</li>
+  </ul>
+  <p class="sub2" style="margin:10px 0 0">
+    7 לילות · <b>5 ימי לימוד בלבד</b> · 3 משחקים · תמחור נמוך לגמרי (לפני חג המולד).
+    <br><b>החיסרון:</b> <b>אפס משחקי ניקס, אפס MSG.</b> הניקס פשוט לא בבית בתאריכים האלה.
+  </p>
+</div>
+
+<h2>השוואה מלאה</h2>
+<table>
+  <thead><tr><th>אפשרות</th><th>תאריכים</th><th>לילות</th><th>ימי לימוד</th><th>משחקים</th><th>ניקס ב-MSG</th></tr></thead>
+  <tbody>
+    <tr><td>נוכחי</td><td class="date">3–14.12</td><td>11</td><td><span class="tag ok">3–4</span></td><td><span class="tag no">2</span></td><td><span class="tag no">0</span></td></tr>
+    <tr><td>ה׳ · חנוכה</td><td class="date">10–17.12</td><td>7</td><td><span class="tag ok">5</span></td><td>3</td><td><span class="tag no">0</span></td></tr>
+    <tr><td>ד׳ · מינימום</td><td class="date">22–28.12</td><td>6</td><td><span class="tag ok">6</span></td><td>3</td><td><span class="tag hot">3</span></td></tr>
+    <tr class="hl"><td><b>ג׳ · מומלץ</b></td><td class="date"><b>20–28.12</b></td><td><b>8</b></td><td><b>8</b></td><td><b>4</b></td><td><span class="tag hot">3</span></td></tr>
+    <tr><td>א׳</td><td class="date">13–24.12</td><td>11</td><td>10</td><td>4–6</td><td><span class="tag ok">1</span></td></tr>
+    <tr><td>ב׳</td><td class="date">16–29.12</td><td>13</td><td>11</td><td>6–7</td><td><span class="tag hot">3</span></td></tr>
+  </tbody>
+</table>
+<p class="note">
+ספירת ימי הלימוד מניחה שבוע א׳–ה׳ וכוללת את יום הנחיתה בישראל (08:50) כיום שלא מגיעים אליו.
+בשבוע לימודים א׳–ו׳ יש להוסיף יום אחד לאפשרויות ג׳ ו-ד׳.
+</p>
+
+<h2>נקודה על התקציב</h2>
+<div class="box">
+<p style="margin:0 0 8px;font-size:14.5px">
+אפשרות ג׳ נופלת בשבוע חג המולד, שהוא שיא העונה בניו יורק — אבל היא גם קצרה ב-3–5 לילות מאפשרויות א׳ ו-ב׳.
+שני הכוחות מקזזים זה את זה כמעט במדויק:
+</p>
+<ul>
+  <li><b>אפשרות א׳:</b> 11 לילות × ~$330 ≈ <span class="big">$3,600</span> לחדר</li>
+  <li><b>אפשרות ג׳:</b> 8 לילות × ~$500 ≈ <span class="big">$4,000</span> לחדר</li>
+</ul>
+<p class="sub2" style="margin:8px 0 0">
+כלומר הפרש של כ-$130 לאדם בלינה, ופחות ימים = פחות אוכל, תחבורה ופעילויות.
+<b>הפער האמיתי הוא בכרטיסים:</b> משחקי 25 ו-27.12 הם היקרים בעונה.
+אם התקציב לוחץ — לוותר על הדרבי (27.12) ולהישאר עם 23 ו-25.12, ולחזור ב-27.12 במקום ב-28.12
+(חוסך גם עוד יום לימודים).
+</p>
+</div>
+
+<h2>שורה תחתונה</h2>
+<div class="box rec">
+<ul>
+  <li><b>אפשרות ג׳ (20–28.12) היא ההמלצה החדשה.</b> היא מקצרת את הטיול ב-3 לילות מול אפשרות א׳,
+  חוסכת 2 ימי לימוד, ובכל זאת מכפילה פי שלושה את מספר משחקי הניקס ב-MSG. זו התוכנית הכי טובה שיצאה עד כה.</li>
+  <li><b>אפשרות ה׳ (10–17.12)</b> רלוונטית רק אם ימי הלימוד הם השיקול המכריע והם מוכנים לוותר על הניקס.
+  היא לא מגשימה את היעד המרכזי של הטיול.</li>
+  <li><b>אפשרות ד׳ לא שווה את זה</b> — חוסכת יומיים בבית ספר ומייקרת את הקורטסייד בכמה אלפי דולרים.</li>
+</ul>
+</div>
+
+<p class="note" style="margin-top:26px">
+כל התאריכים והשעות אומתו מול nba.com/knicks/schedule ולוחות ESPN של נטס, סלטיקס וסיקסרס.
+שעות של משחקים בשידור ארצי עשויות להשתנות — לאמת שוב לפני הזמנת כרטיסים.
+חופשת חנוכה תשפ״ז: 5–12.12.2026, חזרה ללימודים א׳ 13.12.
+</p>
+
+</div>
+</body>
+</html>

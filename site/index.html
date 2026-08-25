@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>טיול בר מצווה NBA — חנוכה 2026</title>
+<title>טיול בר מצווה NBA — קריסמס 2026</title>
 <style>
   :root{
     --blue:#1d428a; --orange:#f58426; --navy:#0b1f3a;
@@ -46,12 +46,23 @@
   .badge.tbd{background:var(--tbd-bg);border:1px solid var(--tbd-bd);color:var(--tbd-tx);}
   .badge.ok{background:var(--ok-bg);border:1px solid var(--ok-bd);color:var(--ok-tx);}
   .note{font-size:13px;color:var(--gray);}
+  .money{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:18px 20px;}
+  .money table{width:100%;border-collapse:collapse;font-size:14px;}
+  .money th,.money td{padding:9px 10px;text-align:right;border-bottom:1px solid #eef1f6;}
+  .money th{background:#eef2f8;color:var(--navy);}
+  .money td.num{font-weight:800;color:var(--navy);white-space:nowrap;}
+  .totrow td{background:#eef2f8;font-weight:800;color:var(--blue);border-bottom:none;}
+  .bigtot{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;}
+  .bigtot div{flex:1;min-width:150px;background:linear-gradient(135deg,var(--blue),#13306b);color:#fff;border-radius:14px;padding:14px 16px;}
+  .bigtot .n{font-size:24px;font-weight:800;}
+  .bigtot .l{font-size:12.5px;opacity:.9;}
+  .warnbox{background:var(--tbd-bg);border:1px solid var(--tbd-bd);color:var(--tbd-tx);border-radius:12px;padding:12px 16px;font-size:14px;margin-top:14px;}
   footer{text-align:center;color:var(--gray);font-size:13px;padding:24px;}
 </style>
 </head>
 <body>
 <header>
-  <div class="brand">🏀 בר מצווה NBA · חנוכה 2026</div>
+  <div class="brand">🏀 בר מצווה NBA · 20–28.12.2026</div>
   <nav>
     <a href="index.html" class="active">בית</a>
     <a href="planning.html">תכנון</a>
@@ -60,17 +71,17 @@
 </header>
 
 <div class="hero">
-  <div class="tag">🇺🇸 New York · Boston · December 2026</div>
+  <div class="tag">🇺🇸 New York · Philadelphia · Dec 20–28, 2026</div>
   <h1>🏀 טיול בר מצווה NBA</h1>
-  <p>חגיגת בר מצווה סביב משחקי NBA על החוף המזרחי — ניו יורק (ניקס), פילדלפיה ובוסטון, עם משחק קורטסייד אחד לפחות ומפגש עם השחקנים בלב החוויה.</p>
+  <p>חגיגת בר מצווה סביב משחקי NBA בניו יורק — שני משחקי ניקס ב-MSG (כולל משחק הקריסמס), 76ers בפילדלפיה, ונטס ב-Barclays עם הקרבה הכי גדולה לשחקנים. הטיסות ושלושה מתוך ארבעת המשחקים כבר שולמו.</p>
 </div>
 
 <div class="stats">
   <div class="stat"><div class="num">9</div><div class="lbl">ימים</div></div>
   <div class="stat"><div class="num">4</div><div class="lbl">משחקים</div></div>
-  <div class="stat"><div class="num">1</div><div class="lbl">קורטסייד</div></div>
-  <div class="stat"><div class="num">3</div><div class="lbl">ערים</div></div>
+  <div class="stat"><div class="num">2</div><div class="lbl">ערים</div></div>
   <div class="stat"><div class="num">3</div><div class="lbl">נוסעים</div></div>
+  <div class="stat"><div class="num">8</div><div class="lbl">ימי לימודים</div></div>
 </div>
 
 <div class="wrap">
@@ -78,15 +89,41 @@
     <a class="scard" href="planning.html">
       <div class="ic">🧭</div>
       <h2>תכנון והחלטות</h2>
-      <p>הדיון מאחורי הטיול: בחירת החלון, אסטרטגיית המפגש עם השחקנים, השוואות מחירי קורטסייד ותקציב.</p>
+      <p>ההיגיון מאחורי הטיול: למה עברנו מחנוכה לקריסמס, אסטרטגיית המפגש עם השחקנים, מה נרכש ומה נשאר להחליט.</p>
       <span class="go">לחלק התכנון ←</span>
     </a>
     <a class="scard plan" href="trip.html">
       <div class="ic">🗓️</div>
       <h2>תוכנית הטיול</h2>
-      <p>מסלול יום-אחר-יום (4–12 בדצמבר, 4 משחקים) עם מלונות, טיסות, כרטיסים וחוויות — placeholder עם TBD לכל מה שטרם הוזמן.</p>
+      <p>מסלול יום-אחר-יום (20–28 בדצמבר, 4 משחקים) עם טיסות, כרטיסים, מלון וחוויות — מה שכבר שולם מסומן ✓ ומה שלא, TBD.</p>
       <span class="go">לתוכנית יום-יום ←</span>
     </a>
+  </div>
+
+  <h3 class="sec">💳 מה כבר שולם</h3>
+  <div class="money">
+    <table>
+      <thead><tr><th>פריט</th><th>פרטים</th><th>תאריך</th><th>סכום</th></tr></thead>
+      <tbody id="purchBody"></tbody>
+    </table>
+    <div class="bigtot">
+      <div><div class="n" id="totAll"></div><div class="l">סה"כ שולם עד כה (3 נוסעים)</div></div>
+      <div><div class="n" id="totPP"></div><div class="l">לאדם</div></div>
+    </div>
+  </div>
+
+  <h3 class="sec">📊 תקציב — שולם מול נותר (לאדם)</h3>
+  <div class="money">
+    <table>
+      <thead><tr><th>סעיף</th><th>שולם</th><th>נותר</th><th>הערה</th></tr></thead>
+      <tbody id="budgetBody"></tbody>
+    </table>
+    <div class="bigtot">
+      <div><div class="n" style="font-size:19px" id="fcNoFood"></div><div class="l">תחזית לאדם — ללא אוכל</div></div>
+      <div><div class="n" style="font-size:19px" id="fcFood"></div><div class="l">תחזית לאדם — כולל אוכל</div></div>
+    </div>
+    <div class="warnbox" id="vsTarget"></div>
+    <p class="note" id="vsNba" style="margin-top:10px"></p>
   </div>
 
   <h3 class="sec">סטטוס הזמנות</h3>
@@ -99,7 +136,7 @@
   <p class="note" id="schednote" style="margin-top:12px"></p>
 </div>
 
-<footer>גרסה 1 · עודכן יוני 2026 · אתר תכנון פנימי למשפחה</footer>
+<footer>גרסה 3 · עודכן 25 באוגוסט 2026 · אתר תכנון פנימי למשפחה</footer>
 
 <script src="../data/data.js"></script>
 <script>
@@ -110,6 +147,32 @@
     tb.insertAdjacentHTML('beforeend', `<tr><td>${s.item}</td><td>${badge}</td><td class="note">${s.note||''}</td></tr>`);
   });
   document.getElementById('schednote').textContent = "⏳ " + META.scheduleNote;
+
+  const usd = n => "$" + n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const pb = document.getElementById('purchBody');
+  let sum = 0;
+  PURCHASES.forEach(p=>{
+    sum += p.total;
+    pb.insertAdjacentHTML('beforeend',
+      `<tr><td><b>${p.item}</b><div class="note">${p.cat}</div></td>
+       <td class="note">${p.detail}<div style="margin-top:4px">${p.note||''}</div></td>
+       <td class="note">${p.date}</td>
+       <td class="num">${usd(p.total)}<div class="note" style="font-weight:400">${p.unit||''}</div></td></tr>`);
+  });
+  pb.insertAdjacentHTML('beforeend',
+    `<tr class="totrow"><td colspan="3">סה"כ שולם</td><td class="num">${usd(sum)}</td></tr>`);
+  document.getElementById('totAll').textContent = usd(sum);
+  document.getElementById('totPP').textContent = usd(sum/3);
+
+  const bb = document.getElementById('budgetBody');
+  BUDGET.rows.forEach(r=>{
+    bb.insertAdjacentHTML('beforeend',
+      `<tr><td>${r.item}</td><td class="num">${r.paid}</td><td>${r.left}</td><td class="note">${r.note||''}</td></tr>`);
+  });
+  document.getElementById('fcNoFood').textContent = BUDGET.forecastNoFood;
+  document.getElementById('fcFood').textContent = BUDGET.forecastWithFood;
+  document.getElementById('vsTarget').textContent = BUDGET.vsTarget;
+  document.getElementById('vsNba').textContent = "🆚 " + BUDGET.vsNbaTrips;
 </script>
 </body>
 </html>

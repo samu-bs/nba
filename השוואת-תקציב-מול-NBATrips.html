@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>השוואת תקציב — DIY מול NBATrips</title>
+<style>
+  :root{
+    --bg:#0f1216; --card:#171b21; --line:#272d36; --txt:#e8ebf0; --muted:#9aa4b2;
+    --nyk:#f58426; --accent:#e5a54b; --bad:#e06c6c; --good:#5ec08a;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f6f7f9; --card:#ffffff; --line:#e3e7ec; --txt:#151922; --muted:#5d6672;
+           --nyk:#d2661a; --accent:#a9761d; --bad:#c0392b; --good:#1f7a52;}
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans Hebrew",Arial,sans-serif;
+       line-height:1.55;padding:24px 16px 56px}
+  .wrap{max-width:940px;margin:0 auto}
+  h1{font-size:27px;margin:0 0 6px;letter-spacing:-.02em}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 24px}
+  h2{font-size:20px;margin:38px 0 6px;letter-spacing:-.01em}
+  h3{font-size:16px;margin:20px 0 6px}
+  .sub2{color:var(--muted);font-size:13.5px;margin:0 0 14px}
+  .sub2 b,.note b,.box b,.alert b{color:var(--txt);font-weight:600}
+  table{width:100%;border-collapse:collapse;background:var(--card);
+        border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+  thead th{text-align:right;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;
+           color:var(--muted);font-weight:600;padding:11px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:10px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tr.total td{background:rgba(229,165,75,.10);font-weight:700}
+  tr.good td{background:rgba(94,192,138,.10)}
+  tr.bad td{background:rgba(224,108,108,.09)}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:left;direction:ltr}
+  .lbl{font-weight:600}
+  .tag{font-size:11px;border:1px solid var(--accent);color:var(--accent);
+       border-radius:5px;padding:1px 6px;white-space:nowrap;display:inline-block}
+  .tag.ok{border-color:var(--good);color:var(--good)}
+  .tag.no{border-color:var(--bad);color:var(--bad)}
+  .note{margin-top:16px;font-size:13px;color:var(--muted);border-right:3px solid var(--line);padding:2px 12px 2px 0}
+  .alert{background:var(--card);border:1px solid var(--bad);border-radius:12px;padding:16px 18px;margin:18px 0;font-size:14.5px}
+  .alert h3{margin:0 0 8px;color:var(--bad);font-size:16px}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .box.rec{border-color:var(--good)}
+  .box h3{margin:0 0 6px}
+  ul{margin:8px 0;padding-right:20px}
+  li{margin:5px 0;font-size:14px}
+  .free{color:var(--muted)}
+  .big{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>חרגנו מהתקציב?</h1>
+<p class="sub">
+השוואה בין המסלול שבנינו לבין חבילת NBATrips מקבילה · 16.8.2026 · 3 נוסעים
+</p>
+
+<div class="alert">
+  <h3>התשובה הקצרה: כן, חרגנו — בערך $1,300–2,200 לאדם</h3>
+  <p style="margin:0">
+  התקציב שהוגדר היה <b>$3,000–5,000 לאדם כולל טיסות</b>. ההערכה הנוכחית עומדת על
+  <b>~$6,300 לאדם</b> בלי אוכל, או <b>~$7,200 עם אוכל</b>.
+  <br>שלושה גורמים אחראים לזה, וכולם נובעים מאותה החלטה: <b>שבוע חג המולד</b>.
+  </p>
+</div>
+
+<h2>1 · מה NBATrips גובים באמת</h2>
+<p class="sub2">
+מחירי טיולי 2026/7 עדיין לא פורסמו ("פרטים נוספים יפורסמו בהמשך"). לכן ההשוואה היא מול
+<b>"ניו יורק לייטס"</b> — הטיול המקביל ביותר שלהם, שכבר התקיים: 28.11–7.12.2025,
+9 ימים / 8 לילות, <b>4 משחקים, 3 ערים</b> (ניו יורק, פילדלפיה, בוסטון).
+המחיר המופיע בקוד המוצר באתר: <b>$7,000 לאדם</b>.
+</p>
+<table>
+  <thead><tr><th>סעיף</th><th>כלול אצל NBATrips?</th></tr></thead>
+  <tbody>
+    <tr class="good"><td class="lbl">טיסות הלוך-חזור</td><td>✔ כלול</td></tr>
+    <tr class="good"><td class="lbl">מלונות יוקרה בכל עיר</td><td>✔ Westin Times Square · Loews Philadelphia · Marriott Copley Place</td></tr>
+    <tr class="good"><td class="lbl">4 כרטיסי משחק, מושבים טובים</td><td>✔ כלול <span class="free">(קורטסייד = שדרוג בתשלום)</span></td></tr>
+    <tr class="good"><td class="lbl">הסעות פרטיות לאורך כל הטיול</td><td>✔ כלול</td></tr>
+    <tr class="good"><td class="lbl">מדריך מקצועי, סיורי ערים</td><td>✔ כלול</td></tr>
+    <tr class="good"><td class="lbl">משחק על פרקט NBA</td><td>✔ כלול — <b>זה מה שאנחנו לא יכולים לקנות</b></td></tr>
+    <tr class="bad"><td class="lbl">ארוחות</td><td>✘ לא כלול</td></tr>
+    <tr class="bad"><td class="lbl">ביטוח נסיעות</td><td>✘ לא כלול</td></tr>
+    <tr class="bad"><td class="lbl">ESTA</td><td>✘ $100 לאדם בתוספת <span class="free">(האגרה הרשמית היא $21)</span></td></tr>
+    <tr class="bad"><td class="lbl">ביטול / החזר</td><td>✘ <b>אין. בכלל.</b> כל התשלומים סופיים</td></tr>
+  </tbody>
+</table>
+<p class="note">
+החדר אצלם הוא <b>2 אנשים לחדר</b> כברירת מחדל; משפחה יכולה לבקש עד 4 באותו חדר.
+הקבוצה מונה <b>30–50 איש</b>. הרשמה מוקדמת: מקדמה $1,000 לאדם, הנחה $1,000 לשלושה.
+</p>
+
+<h2>2 · פירוט העלות שלנו</h2>
+<p class="sub2">8 לילות · 4 משחקים · ניו יורק + יום בפילדלפיה · שבוע חג המולד</p>
+<table>
+  <thead><tr><th>סעיף</th><th>ל-3 אנשים</th><th>לאדם</th><th>הערה</th></tr></thead>
+  <tbody>
+    <tr><td class="lbl">טיסות Delta (שולם)</td><td class="num">$4,200</td><td class="num">$1,400</td><td class="free"><b>✅ מאומת</b> — Main Refundable, שולם בפועל</td></tr>
+    <tr><td class="lbl">קורטסייד ברקליס 21.12</td><td class="num">$2,700</td><td class="num">$900</td><td class="free">הערכה, לא אומת</td></tr>
+    <tr><td class="lbl">Pre-Game Pass</td><td class="num">$225</td><td class="num">$75</td><td class="free">מאומת</td></tr>
+    <tr><td class="lbl">סיקסרס 23.12 · יציע תחתון</td><td class="num">~$600</td><td class="num">~$200</td><td class="free">הערכה</td></tr>
+    <tr><td class="lbl">ניקס 25.12 · יציע 200</td><td class="num">$2,550</td><td class="num">$850</td><td class="free">מאומת</td></tr>
+    <tr><td class="lbl">ניקס 27.12 · יציע תחתון</td><td class="num">$2,331</td><td class="num">$777</td><td class="free">מאומת</td></tr>
+    <tr><td class="lbl">מלון · 8 לילות מידטאון</td><td class="num">~$4,400</td><td class="num">~$1,467</td><td class="free">~$550 ללילה, שבוע חג המולד</td></tr>
+    <tr><td class="lbl">תחבורה · רכבות, JFK, מטרו</td><td class="num">~$850</td><td class="num">~$283</td><td class="free">כולל Amtrak לפילדלפיה</td></tr>
+    <tr><td class="lbl">אטרקציות · סיור MSG ועוד</td><td class="num">~$650</td><td class="num">~$217</td><td class="free"></td></tr>
+    <tr><td class="lbl">ESTA + ביטוח נסיעות</td><td class="num">~$363</td><td class="num">~$121</td><td class="free">ESTA $21 לאדם</td></tr>
+    <tr class="total"><td>סה״כ ללא אוכל</td><td class="num">~$18,870</td><td class="num">~$6,290</td><td></td></tr>
+    <tr><td class="lbl">ארוחות · 9 ימים, כשר</td><td class="num">~$2,700</td><td class="num">~$900</td><td class="free">~$100 לאדם ליום</td></tr>
+    <tr class="total"><td>סה״כ עם אוכל</td><td class="num">~$21,570</td><td class="num">~$7,190</td><td></td></tr>
+  </tbody>
+</table>
+
+<h2>3 · ההשוואה</h2>
+<table>
+  <thead><tr><th></th><th>המסלול שלנו</th><th>NBATrips "ניו יורק לייטס"</th></tr></thead>
+  <tbody>
+    <tr><td class="lbl">מחיר בסיס לאדם</td><td class="num">~$6,290</td><td class="num">$7,000</td></tr>
+    <tr><td class="lbl">+ ESTA</td><td class="num">כלול</td><td class="num">+$100</td></tr>
+    <tr><td class="lbl">+ ביטוח</td><td class="num">כלול</td><td class="num">+$100</td></tr>
+    <tr><td class="lbl">+ ארוחות</td><td class="num">+$900</td><td class="num">+$900</td></tr>
+    <tr class="total"><td>סה״כ לאדם</td><td class="num">~$7,190</td><td class="num">~$8,100</td></tr>
+    <tr><td class="lbl">משחקים</td><td>4</td><td>4</td></tr>
+    <tr><td class="lbl">ערים</td><td>2 <span class="free">(+ פילדלפיה כטיול יום)</span></td><td>3 <span class="free">(מלון בכל אחת)</span></td></tr>
+    <tr><td class="lbl">מושבים</td><td><b>קורטסייד</b> באחד, יציע תחתון בשאר</td><td>"מושבים טובים" · קורטסייד בתוספת</td></tr>
+    <tr><td class="lbl">משחק ניקס ב-MSG</td><td><b>2</b>, כולל חג המולד</td><td>1</td></tr>
+    <tr class="good"><td class="lbl">משחק על פרקט NBA</td><td><span class="tag no">לא זמין ל-3 אנשים</span></td><td><span class="tag ok">כלול</span></td></tr>
+    <tr><td class="lbl">גמישות וביטול</td><td><b>טיסות מוחזרות במלואן</b>, כרטיסים ניתנים למכירה חוזרת</td><td>אפס. הכול סופי</td></tr>
+    <tr><td class="lbl">עונה</td><td>שבוע חג המולד <span class="free">(שיא מחירים)</span></td><td>סוף נובמבר <span class="free">(עונה נמוכה)</span></td></tr>
+  </tbody>
+</table>
+
+<div class="box">
+<h3>מה זה אומר</h3>
+<p style="margin:0 0 8px">
+המסלול שלנו <b>זול ב-~$900 לאדם</b> מהחבילה המקבילה של NBATrips — <b>ולמרות שהוא בשבוע חג המולד</b>,
+שהוא היקר בשנה. בעונה זהה הפער היה גדול בהרבה. במילים אחרות: <b>ה-DIY עובד. התמחור סביר.</b>
+</p>
+<p style="margin:0">
+אבל הוא <b>חורג מהתקציב שהוגדר בתחילת התכנון</b>, כי התקציב ההוא נבנה על הנחת חנוכה בעונה נמוכה —
+לפני שידענו שהניקס לא משחקים בבית בחנוכה.
+</p>
+</div>
+
+<div class="box">
+<h3>מה NBATrips נותנים שאנחנו לא</h3>
+<ul>
+  <li><b>משחק על פרקט ה-NBA וחוויות מגרש לילדים.</b> זה בדיוק מה שנחסם לנו: הנטס דורשים 10 משתתפים
+  והניקס 9. לקבוצה של 30–50 איש זה טריוויאלי. <b>זה היתרון האמיתי היחיד שלהם, והוא רלוונטי מאוד לבר מצווה.</b></li>
+  <li>הסעות פרטיות, מדריך, ואפס לוגיסטיקה עליך.</li>
+  <li>מלון בכל עיר במקום טיולי יום.</li>
+</ul>
+<p class="sub2" style="margin:8px 0 0">
+מנגד: אצלם אין החזר על כלום, אין בחירת משחקים, ואי אפשר לשבת קורטסייד בלי תוספת.
+ואצלנו — שני משחקי ניקס ב-MSG כולל חג המולד, מול אחד אצלם.
+</p>
+</div>
+
+<h2>4 · איך לחזור לתקציב</h2>
+<p class="sub2">כדי לרדת ל-$5,000 לאדם צריך לחסוך ~$1,300. יש ארבעה מנופים, לפי סדר יעילות:</p>
+<table>
+  <thead><tr><th>מהלך</th><th>חיסכון לאדם</th><th>מה מפסידים</th></tr></thead>
+  <tbody>
+    <tr class="good"><td class="lbl">★ לוותר על הקורטסייד בברקליס<br><span class="free" style="font-size:12.5px">ולקחת יציע תחתון ליד מנהרת השחקנים (סקשן 3 או 16)</span></td>
+      <td class="num"><b>~$700–775</b></td>
+      <td>המושב עצמו. <b>אבל לא את הקרבה לשחקנים</b> — ה-Pre-Game Pass ב-$75 נותן את זה טוב יותר</td></tr>
+    <tr class="good"><td class="lbl">יציע 200 גם ב-27.12</td><td class="num">~$250</td><td>גובה במשחק הדרבי</td></tr>
+    <tr><td class="lbl">מלון מחוץ למידטאון<br><span class="free" style="font-size:12.5px">פן סטיישן / הדסון יארדס / לונג איילנד סיטי</span></td>
+      <td class="num">~$270</td><td>10–15 דקות נסיעה נוספות</td></tr>
+    <tr><td class="lbl">לוותר על משחק הדרבי 27.12</td><td class="num">~$777</td><td>משחק שלם. יורדים ל-3 משחקים</td></tr>
+  </tbody>
+</table>
+
+<div class="box rec">
+<h3>ההמלצה</h3>
+<p style="margin:0 0 8px">
+<b>לוותר על הקורטסייד ולעבור ל-200 ב-27.12.</b> יחד: חיסכון של <b>~$1,025 לאדם</b> →
+נוחתים על <b>~$5,265 לאדם</b> בלי אוכל. עם מלון מעט מחוץ למידטאון — בדיוק בתקציב.
+</p>
+<p style="margin:0">
+<b>למה זה הגיוני דווקא בקורטסייד:</b> הקורטסייד נבחר במקור בעיקר <em>כדי להיות קרוב לשחקנים</em>.
+אבל ה-Pre-Game Pass ב-$75 מציב אתכם בצד המגרש בזמן החימום של שתי הקבוצות, שעה וחצי לפני שמישהו נכנס לאולם —
+קרוב יותר, ארוך יותר, ופי 12 זול יותר. לקנות גם קורטסייד וגם Pre-Game Pass זה לשלם פעמיים על אותה מטרה.
+ויציע תחתון ליד סקשן 3 או 16 שם אתכם בדיוק במקום שממנו השחקנים עולים למגרש — וזו גם הנקודה היחידה
+שבה מדיניות ברקליס מתירה לבקש חתימה.
+</p>
+</div>
+
+<div class="alert" style="border-color:var(--accent)">
+<h3 style="color:var(--accent)">מה עוד פתוח</h3>
+<ul style="margin:0">
+  <li>✅ <b>עלות הטיסות אומתה: $1,400 לאדם.</b> זה בדיוק האומדן שהנחתי, ולכן מסקנת החריגה נשארת כפי שהיא.</li>
+  <li><b>מחיר קורטסייד אמיתי בברקליס ל-21.12.</b> הטווח $700–1,500 הוא הערכה; צריך דפדפן פתוח כדי לראות הצעות בפועל.
+  אם בפועל זה בקצה הנמוך, הוויתור עליו חוסך פחות.</li>
+  <li><b>מחיר מלון בפועל.</b> שווה לבדוק כמה מלונות עם ביטול חינם לפני שמניחים $550 ללילה —
+  ההנחה הזו לבדה שווה ~$270 לאדם לכאן או לכאן.</li>
+</ul>
+</div>
+
+<p class="note" style="margin-top:26px">
+<b>מקורות:</b> <a href="https://nbatrips.com/product/newyorklights/">nbatrips.com — ניו יורק לייטס</a> (המחיר $7,000 מופיע בנתוני המוצר בעמוד) ·
+<a href="https://nbatrips.com/en/qa/">NBATrips FAQ</a> (מה כלול ומה לא, גודל קבוצה, מדיניות ביטול) ·
+<a href="https://nbatrips.com/tripshe/">עמוד הטיולים</a> (ESTA $100, הרשמה מוקדמת) ·
+Vivid Seats · barclayscenter.com.
+<br>מחירי 2026/7 של NBATrips טרם פורסמו — ההשוואה היא מול טיול 2025/6 מקביל בעונה נמוכה.
+</p>
+
+</div>
+</body>
+</html>

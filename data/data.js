@@ -1,106 +1,146 @@
 /* ============================================================
    NBA Bar Mitzvah Trip — data layer
-   ערכו כאן את הנתונים. כל הערכים שלא הוזמנו עדיין = "TBD".
-   trip.html קורא את TRIP; planning.html קורא את META.
+   עודכן: 25 באוגוסט 2026
+   סטטוס: הטיסות והכרטיסים ל-3 משחקים נרכשו ושולמו.
+   TRIP  → trip.html | META/STATUS/PURCHASES/BUDGET → index.html + planning.html
    ============================================================ */
 
 const META = {
-  title: "טיול בר מצווה NBA — חנוכה 2026",
-  window: "4–12 בדצמבר 2026 (חנוכה)",
-  travelers: "3 (יוסי + 2 בנים, 13 ו-15) · +הורה+ילד עדיין TBD",
-  budget: "$3,000–5,000 לאדם (~$9,000–15,000 סה\"כ)",
+  title: "טיול בר מצווה NBA — קריסמס 2026",
+  window: "20–28 בדצמבר 2026 (9 ימים, 8 לילות) · נחיתה בארץ 29.12",
+  travelers: "3 — יוסי + איתן + סמואל. סופי: ההורה והילד הנוספים לא מצטרפים.",
+  budget: "יעד מקורי: $3,000–5,000 לאדם · תחזית מעודכנת: ~$6,150 לאדם ללא אוכל",
   team: "ניו יורק ניקס",
-  scheduleNote: "לוח ה-NBA הרשמי מתפרסם ~14–21 באוגוסט 2026. עד אז המשחקים והתאריכים המדויקים = TBD."
+  scheduleNote: "הלוח פורסם, התאריכים שונו מחנוכה לקריסמס, והטיסות + 3 מתוך 4 המשחקים כבר שולמו. נותר: כרטיסי Barclays ל-21.12, מלון, רכבת לפילדלפיה, ESTA וביטוח."
 };
 
-/* ---- סטטוס כללי של ההזמנות (לוח מחוונים בעמוד הבית) ---- */
+/* ---- סטטוס כללי של ההזמנות ---- */
 const STATUS = [
-  { item: "טיסות TLV↔NYC",            state: "TBD", note: "הצעה: Delta ישיר ~$854 לנוסע ($2,562 ל-3) — לאמת תאריכים/כבודה" },
-  { item: "מלון ניו יורק",            state: "TBD", note: "מידטאון, קרוב ל-MSG" },
-  { item: "מלון בוסטון",              state: "TBD", note: "1–2 לילות" },
-  { item: "כרטיס קורטסייד (משחק 1)",   state: "TBD", note: "ייסגר אחרי פרסום הלוח (אוגוסט)" },
-  { item: "כרטיס ניקס @ MSG",          state: "TBD", note: "יציע תחתון" },
-  { item: "כרטיס 76ers @ פילדלפיה",    state: "TBD", note: "טיול יום מניו יורק — יציע תחתון" },
-  { item: "כרטיס סלטיקס @ בוסטון",      state: "TBD", note: "יציע תחתון + High-Five Tunnel" },
-  { item: "רכבת NYC↔פילדלפיה",        state: "TBD", note: "Amtrak/אוטובוס, ~1.5 שעות לכל כיוון" },
-  { item: "חוויות על הפרקט / High-Five", state: "TBD", note: "מול מחלקות הקבוצות" },
-  { item: "ESTA (×3)",                state: "TBD", note: "$21 לאדם — לפני הטיסות" },
-  { item: "ביטוח נסיעות",             state: "TBD", note: "חובה — אין החזרים על כרטיסים" }
+  { item: "טיסות TLV↔JFK (Delta)",        state: "שולם", note: "DL249 ב-20.12 · DL234 ב-28.12 · אישור GQRZUG · $1,403 לנוסע" },
+  { item: "כרטיסים 23.12 — 76ers מול יוסטון", state: "שולם", note: "Xfinity Mobile Arena · Lower Level 102, שורות 19–20 · $2,929.92 ל-3" },
+  { item: "כרטיסים 25.12 — ניקס מול ספרס", state: "שולם", note: "MSG · Section 208 Row 21 · $2,764.14 ל-3 (SeatGeek 6P2-56932QP)" },
+  { item: "כרטיסים 27.12 — ניקס מול נטס",  state: "שולם", note: "MSG · Section 419 Row 6 · $1,565.76 ל-3 (MemberDeals 158908103)" },
+  { item: "כרטיסים 21.12 — נטס מול פורטלנד", state: "TBD", note: "⚠️ ההחלטה הפתוחה: קורטסייד (~$700–1,500) או יציע תחתון ליד מנהרת השחקנים (~$126–200)" },
+  { item: "Pre-Game Pass ב-Barclays",     state: "TBD", note: "$75 לאדם · נמכר ליחידים · יוצא למכירה רק ~9–23 בנובמבר. תזכורת!" },
+  { item: "מלון ניו יורק (8 לילות)",      state: "TBD", note: "20–28.12 · חדר ל-3 · שבוע קריסמס = שיא מחירים. להזמין עם ביטול חינם" },
+  { item: "רכבת Amtrak ל-פילדלפיה",       state: "TBD", note: "23.12 הלוך-חזור · ~$100 לאדם · אחרון חזרה 23:40" },
+  { item: "סיור ב-MSG (22.12)",           state: "TBD", note: "$48 מבוגר / $43 ילד · יום ללא משחק = חדר ההלבשה של הניקס פתוח" },
+  { item: "ESTA (×3)",                    state: "TBD", note: "$21 לאדם · רק דרך esta.cbp.dhs.gov · להגיש עכשיו" },
+  { item: "ביטוח נסיעות",                 state: "TBD", note: "חובה — כרטיסי המשחקים ללא החזר" }
 ];
 
-/* ---- מסלול יום-יום. fields ריקים מסומנים TBD בתצוגה ---- */
+/* ---- מה כבר שולם בפועל ---- */
+const PURCHASES = [
+  { cat:"טיסות", item:"Delta DL249/DL234 — TLV⇄JFK, 3 נוסעים",
+    detail:"אישור GQRZUG · U הלוך / G חזור (Premium Select) · שניהם Refundable",
+    date:"15.8.2026", unit:"$1,403.00 × 3", total:4209.00,
+    note:"הוחלף מהתאריכים המקוריים בחנוכה. שולם $1,236 ECredit + $167 מזומן לנוסע." },
+  { cat:"כרטיסי משחק", item:"25.12 · ניקס מול סן אנטוניו @ MSG (קריסמס)",
+    detail:"Section 208 Row 21 · 12:00 · SeatGeek הזמנה 6P2-56932QP",
+    date:"17.8.2026", unit:"$786.00 + $135.38 עמלה × 3", total:2764.14,
+    note:"רמה 200 — בדיוק המהלך החוסך שתוכנן (במקום יציע תחתון ב-$1,173+)." },
+  { cat:"כרטיסי משחק", item:"27.12 · ניקס מול ברוקלין נטס @ MSG (דרבי)",
+    detail:"Section 419 Row 6 · 18:00 · MemberDeals",
+    date:"17.8.2026", unit:"$521.92 × 3", total:1565.76,
+    note:"רמה 400 (יציע עליון) — חסך ~$255 לכרטיס מול היציע התחתון." },
+  { cat:"כרטיסי משחק", item:"23.12 · 76ers מול יוסטון רוקטס @ Xfinity Mobile Arena",
+    detail:"Lower Level 102 — Row 20 ×2 ($879.20) + Row 19 ×1 ($1,171.52) · 19:30 · MemberDeals 158908103",
+    date:"22.8.2026", unit:"ממוצע $976.64 לכרטיס", total:2929.92,
+    note:"⚠️ הרבה מעל ההערכה ($150–250 לכרטיס). הכרטיס השלישי הוא Zone Seating — המושב המדויק לא מובטח, והמושבים מפוצלים בין שתי שורות." }
+];
+
+/* ---- תקציב: שולם מול צפוי (לאדם) ---- */
+const BUDGET = {
+  paidPerPerson: 3822.94,
+  paidTotal: 11468.82,
+  rows: [
+    { item:"✈️ טיסות", paid:"$1,403", left:"—", note:"שולם במלואו" },
+    { item:"🎟️ 3 משחקים (23/25/27.12)", paid:"$2,419.94", left:"—", note:"שולם במלואו, ללא החזר" },
+    { item:"🏀 21.12 Barclays + Pre-Game Pass", paid:"—", left:"$200–275 · או $775–1,575 עם קורטסייד", note:"ההחלטה הפתוחה היחידה בעלת משמעות תקציבית" },
+    { item:"🏨 מלון 8 לילות (חדר ל-3)", paid:"—", left:"$1,330–1,600", note:"מידטאון בשבוע קריסמס. Penn/Hudson Yards/LIC יחסכו ~$270" },
+    { item:"🚆 תחבורה + Amtrak לפילדלפיה", paid:"—", left:"~$280", note:"" },
+    { item:"🗽 אטרקציות (כולל סיור MSG)", paid:"—", left:"~$220", note:"" },
+    { item:"📄 ESTA + ביטוח", paid:"—", left:"~$120", note:"" },
+    { item:"🍔 אוכל", paid:"—", left:"$700–900", note:"לא נכלל בסיכום 'ללא אוכל'" }
+  ],
+  forecastNoFood: "~$6,150 לאדם (מסלול יציע תחתון) · ~$7,150 עם קורטסייד",
+  forecastWithFood: "~$6,950 לאדם · ~$7,950 עם קורטסייד",
+  vsTarget: "חריגה של ~$1,150–2,150 לאדם מהיעד המקורי ($3,000–5,000). הסיבה: היעד נבנה על תמחור חנוכה/עונה שקטה, לפני שהתברר שהניקס בכלל לא משחקים בבית אז.",
+  vsNbaTrips: "NBATrips מבקשים ~$7,000 לאדם על טיול דומה. במסלול יציע תחתון אנחנו עדיין זולים בכ-$850; עם קורטסייד אנחנו כבר בערך באותו מחיר."
+};
+
+/* ---- מסלול יום-יום ---- */
 const TRIP = [
   {
-    day:1, date:"4.12", weekday:"שישי", city:"ניו יורק", type:"הגעה",
+    day:1, date:"20.12", weekday:"ראשון", city:"ניו יורק", type:"הגעה",
     title:"נחיתה בניו יורק",
-    flight:{ dir:"הלוך · TLV → NYC", airline:"Delta (ישירה)", flightNo:"TBD", dep:"TBD", arr:"TBD", pnr:"TBD", price:"$854 לנוסע · הלוך-חזור ($2,562 ל-3)", status:"TBD" },
-    hotel:{ name:"TBD", area:"מידטאן מנהטן", checkin:"4.12", checkout:"9.12", nights:5, confirmation:"TBD", pricePerNight:"TBD", status:"TBD" },
-    activities:["נחיתה, מעבר ביקורת גבולות (ESTA), הגעה למלון","התארגנות ומנוחה"],
-    notes:"מומלץ לתאם נחיתה לפני כניסת שבת. ערב חנוכה ראשון — הדלקת נר ראשון."
+    flight:{ dir:"הלוך · TLV → JFK", airline:"Delta (ישירה, A330-900neo)", flightNo:"DL0249", dep:"11:05 מנתב\"ג, טרמינל 3", arr:"16:44 ב-JFK, טרמינל 4 (12ש' 39ד')", pnr:"GQRZUG", price:"$1,403 לנוסע · $4,209 ל-3", status:"שולם" },
+    hotel:{ name:"TBD", area:"מנהטן", checkin:"20.12", checkout:"28.12", nights:8, confirmation:"TBD", pricePerNight:"TBD", status:"TBD" },
+    activities:["ביקורת גבולות (ESTA), איסוף מזוודות, נסיעה למלון","ערב רגוע — היפטרות מהג'ט-לג לפני משחק מחר"],
+    notes:"נחיתה ביום ראשון אחה\"צ. שווה להזמין העברה מ-JFK מראש — ערב קריסמס-שבוע = תורי מוניות ארוכים."
   },
   {
-    day:2, date:"5.12", weekday:"שבת", city:"ניו יורק", type:"חופשי",
-    title:"יום התאקלמות במנהטן",
-    hotel:{ name:"TBD", area:"מידטאן מנהטן", status:"TBD" },
-    activities:["סיור רגלי קליל: טיימס סקוור, סנטרל פארק","חנות ה-NBA Store (5th Ave) — מרצ' וקיט-אאוט"],
-    notes:"יום שבת — יום מנוחה/סיור ללא משחק. אפשר להתאים לפי שמירת שבת."
+    day:2, date:"21.12", weekday:"שני", city:"ברוקלין", type:"קורטסייד",
+    title:"🏀 נטס מול פורטלנד @ Barclays Center — משחק הקרבה לשחקנים",
+    hotel:{ name:"TBD", area:"מנהטן", status:"TBD" },
+    game:{ tier:"קורטסייד או יציע תחתון (סקשן 3/16) — טרם הוחלט", matchup:"ברוקלין נטס מול פורטלנד טרייל בלייזרס", arena:"Barclays Center, ברוקלין", datetime:"שני 21.12, 19:30", section:"TBD", seats:"TBD", price:"TBD — קורטסייד ~$700–1,500 · יציע תחתון ~$126–200", status:"TBD" },
+    experience:{ name:"Pre-Game Pass — כניסה 1.5 שעות לפני הפתיחה הרגילה, מאחורי הקלעים, וצפייה בחימום של שתי הקבוצות ממושבי צד הפרקט", provider:"Barclays Center (Ticketmaster, נמכר ליחידים — $75 לאדם)", status:"TBD" },
+    activities:["להגיע מוקדם — ה-Pre-Game Pass הוא הרגע הכי קרוב לשחקנים בכל הטיול","מדיניות Barclays: בקשות אוטוגרף רק מהמושב שלכם. מנהרות השחקנים ליד סקשנים 3 ו-16"],
+    notes:"היריבה החלשה והערב באמצע השבוע = המשחק הזול בטיול, ולכן זה המקום הנכון לשדרג מושבים. ⚠️ ה-Pre-Game Pass יוצא למכירה רק 4–6 שבועות מראש (~9–23 בנובמבר) — לבדוק שבועית מ-9.11."
   },
   {
-    day:3, date:"6.12", weekday:"ראשון", city:"ניו יורק", type:"משחק",
-    title:"משחק ניקס @ Madison Square Garden",
-    hotel:{ name:"TBD", area:"מידטאן מנהטן", status:"TBD" },
-    game:{ tier:"יציע תחתון", matchup:"ניקס מול TBD", arena:"Madison Square Garden", datetime:"TBD", section:"TBD", seats:"TBD", price:"TBD", status:"TBD" },
-    activities:["הגעה מוקדמת לאיצטדיון — ציד אוטוגרפים ליד כניסת השחקנים (90–120 ד' לפני)","אחרי המשחק — המתנה ליד יציאת השחקנים"],
-    notes:"המשחק והיריבה ייקבעו אחרי פרסום הלוח. לוודא משחק בית של הניקס בחלון."
+    day:3, date:"22.12", weekday:"שלישי", city:"ניו יורק", type:"חופשי",
+    title:"סיור ב-Madison Square Garden + מנהטן",
+    hotel:{ name:"TBD", area:"מנהטן", status:"TBD" },
+    experience:{ name:"MSG All Access Tour — כולל חדר ההלבשה של הניקס", provider:"Madison Square Garden · $48 מבוגר / $43 ילד", status:"TBD" },
+    activities:["סיור MSG בבוקר — דווקא ביום ללא משחק, כי רק אז חדר ההלבשה של הניקס פתוח לקהל","NBA Store בשדרה החמישית","אחה\"צ חופשי: טיימס סקוור / סנטרל פארק / תצפית"],
+    notes:"זה היום היחיד בטיול שבו סיור ה-MSG עובד. 25.12 ו-27.12 הם ימי משחק, ו-23.12 אנחנו בפילדלפיה."
   },
   {
-    day:4, date:"7.12", weekday:"שני", city:"ברוקלין", type:"קורטסייד",
-    title:"🏀 קורטסייד — נטס מול ניקס @ Barclays Center",
-    hotel:{ name:"TBD", area:"מידטאן מנהטן", status:"TBD" },
-    game:{ tier:"קורטסייד (על הפרקט)", matchup:"נטס מול ניקס (יעד)", arena:"Barclays Center, ברוקלין", datetime:"TBD", section:"שורת פרקט", seats:"TBD", price:"$900–1,400 לאדם (TBD)", status:"TBD" },
-    experience:{ name:"פס חימום / High-Five על יד הפרקט", provider:"Brooklyn Nets", status:"TBD" },
-    activities:["צפייה בחימום מקרוב — קרבה מרבית לשחקני הניקס","פריטים לחתימה בהישג יד מהפרקט"],
-    notes:"היעד: משחק נטס-נגד-ניקס כדי לראות את שחקני הניקס מגובה הפרקט. תלוי בלוח."
+    day:4, date:"23.12", weekday:"רביעי", city:"פילדלפיה (טיול יום)", type:"משחק",
+    title:"טיול יום לפילדלפיה — 76ers מול יוסטון רוקטס",
+    transport:{ mode:"רכבת Amtrak, הלוך-חזור", route:"Penn Station ⇄ 30th Street", duration:"~1 שעה 21 דקות לכל כיוון", ref:"TBD", price:"~$100 לאדם (TBD)", status:"TBD" },
+    hotel:{ name:"TBD", area:"חוזרים ללינה במנהטן — אין החלפת מלון", status:"TBD" },
+    game:{ tier:"יציע תחתון — Lower Level 102", matchup:"יוסטון רוקטס מול פילדלפיה 76ers", arena:"Xfinity Mobile Arena (Wells Fargo Center לשעבר), פילדלפיה", datetime:"רביעי 23.12, 19:30 (שידור ארצי ב-Prime Video)", section:"Lower Level 102 — שורה 20 (×2) ושורה 19 (×1)", seats:"3 — מפוצלים בין שתי שורות סמוכות", price:"$2,929.92 ל-3 (ממוצע $976.64 לכרטיס)", status:"שולם" },
+    activities:["רכבת בוקר ~09:00 · פעמון החירות, Independence Hall, Reading Terminal Market, מדרגות רוקי","לאיצטדיון בקו Broad Street עד תחנת NRG (~20–25 דקות)"],
+    notes:"⚠️ המשחק נגמר ~22:00 והרכבת האחרונה יוצאת 23:40 ומגיעה לניו יורק ~01:00 — עובד אבל בלי מרווח. חלופה רגועה: לינה בפילדלפיה (~$200) וחזרה בצהרי 24.12. ⚠️ שידור ארצי — לאמת את שעת הפתיחה בנובמבר."
   },
   {
-    day:5, date:"8.12", weekday:"שלישי", city:"פילדלפיה (טיול יום)", type:"משחק",
-    title:"טיול יום לפילדלפיה — משחק 76ers",
-    transport:{ mode:"רכבת Amtrak / אוטובוס (הלוך-חזור)", route:"NYC ⇄ פילדלפיה", duration:"~1.5 שעות לכל כיוון", ref:"TBD", price:"TBD", status:"TBD" },
-    hotel:{ name:"TBD", area:"חוזרים ללינה במידטאן מנהטן", status:"TBD" },
-    game:{ tier:"יציע תחתון", matchup:"76ers מול TBD (אידיאלית מול הניקס)", arena:"Xfinity Mobile Arena (Wells Fargo לשעבר), פילדלפיה", datetime:"TBD", section:"TBD", seats:"TBD", price:"TBD", status:"TBD" },
-    activities:["בוקר: רכבת לפילדלפיה, צ'יזסטייק + Reading Terminal Market","ערב: משחק 76ers, וחזרה ברכבת לניו יורק"],
-    notes:"טיול יום — בלי החלפת מלון. הקלף המנצח: אם הלוח ייתן ניקס-בפילדלפיה, רואים את הניקס שוב. יום עמוס — אפשר לוותר אם מעדיפים קצב רגוע."
+    day:5, date:"24.12", weekday:"חמישי", city:"ניו יורק", type:"חופשי",
+    title:"ערב חג המולד בניו יורק",
+    hotel:{ name:"TBD", area:"מנהטן", status:"TBD" },
+    activities:["העיר בשיאה: עץ רוקפלר, חלונות ראווה בחמישית, גשר ברוקלין","יום רגוע — מחר משחק בצהריים ואחריו כניסת שבת"],
+    notes:"אם ישנים בפילדלפיה בלילה של 23.12 — חוזרים לניו יורק בצהריים והיום הזה מתקצר."
   },
   {
-    day:6, date:"9.12", weekday:"רביעי", city:"מעבר לבוסטון", type:"מעבר",
-    title:"מעבר לבוסטון (רכבת Amtrak)",
-    transport:{ mode:"רכבת Amtrak / טיסה קצרה", route:"NYC → Boston", duration:"~4 שעות ברכבת", ref:"TBD", price:"TBD", status:"TBD" },
-    hotel:{ name:"TBD", area:"בוסטון (קרוב ל-TD Garden)", checkin:"9.12", checkout:"11.12", nights:2, confirmation:"TBD", pricePerNight:"TBD", status:"TBD" },
-    activities:["נסיעה לבוסטון, סידור במלון","ערב חופשי — Quincy Market / Faneuil Hall"],
-    notes:""
+    day:6, date:"25.12", weekday:"שישי", city:"ניו יורק", type:"משחק",
+    title:"🎄 ניקס מול סן אנטוניו ספרס @ MSG — משחק הקריסמס",
+    hotel:{ name:"TBD", area:"מנהטן", status:"TBD" },
+    game:{ tier:"רמה 200", matchup:"סן אנטוניו ספרס מול ניו יורק ניקס — רימאץ' גמר 2026", arena:"Madison Square Garden", datetime:"שישי 25.12, 12:00 (מסתיים ~14:30)", section:"Section 208, Row 21", seats:"3 יחד", price:"$2,764.14 ל-3 ($921.38 לכרטיס כולל עמלה)", status:"שולם" },
+    activities:["להגיע מוקדם — כניסת השחקנים לאיצטדיון 90–120 דקות לפני","האווירה במשחק קריסמס ב-MSG היא האירוע הגדול של העונה"],
+    notes:"⚠️ כניסת שבת ~16:15. המשחק מסתיים ~14:30 — מספיק זמן, אבל בלי לשוטט אחרי. שידור ארצי (ABC/ESPN) — לאמת את השעה בנובמבר."
   },
   {
-    day:7, date:"10.12", weekday:"חמישי", city:"בוסטון", type:"משחק",
-    title:"סלטיקס @ TD Garden + High-Five Tunnel",
-    hotel:{ name:"TBD", area:"בוסטון", status:"TBD" },
-    game:{ tier:"יציע תחתון", matchup:"סלטיקס מול TBD", arena:"TD Garden, בוסטון", datetime:"TBD", section:"TBD", seats:"TBD", price:"TBD", status:"TBD" },
-    experience:{ name:"High-Five Tunnel — הילדים על הפרקט, כף עם השחקנים אחרי המחצית", provider:"Boston Celtics (מחלקת קבוצות)", status:"TBD" },
-    activities:["הפרקט המיתולוגי של הסלטיקס","חוויית מגע מובטחת לילדים (Tunnel)"],
-    notes:"לתאם את חוויית ה-Tunnel מראש מול מחלקת הקבוצות של הסלטיקס."
+    day:7, date:"26.12", weekday:"שבת", city:"ניו יורק", type:"חופשי",
+    title:"שבת — יום מנוחה",
+    hotel:{ name:"TBD", area:"מנהטן", status:"TBD" },
+    activities:["יום מנוחה במנהטן","צאת שבת ~17:25"],
+    notes:"משחק הנטס מול פליקנס ב-Barclays ב-18:00 אינו ריאלי — צאת שבת ב-17:25 ועוד ~45 דקות נסיעה."
   },
   {
-    day:8, date:"11.12", weekday:"שישי", city:"בוסטון → ניו יורק", type:"מעבר",
-    title:"חזרה לניו יורק + זמן חופשי",
-    transport:{ mode:"רכבת Amtrak / טיסה קצרה", route:"Boston → NYC", duration:"~4 שעות", ref:"TBD", price:"TBD", status:"TBD" },
-    hotel:{ name:"TBD", area:"מידטאן מנהטן", checkin:"11.12", checkout:"12.12", nights:1, confirmation:"TBD", pricePerNight:"TBD", status:"TBD" },
-    activities:["בוקר: Freedom Trail / הרווארד, ואז חזרה לניו יורק","אחר הצהריים: קניות (Fifth Avenue) / אטרקציה אחרונה"],
-    notes:"יום שישי — להתארגן לפני כניסת שבת."
+    day:8, date:"27.12", weekday:"ראשון", city:"ניו יורק", type:"משחק",
+    title:"🗽 דרבי ניו יורק — ניקס מול נטס @ MSG",
+    hotel:{ name:"TBD", area:"מנהטן", status:"TBD" },
+    game:{ tier:"רמה 400 (יציע עליון)", matchup:"ברוקלין נטס מול ניו יורק ניקס", arena:"Madison Square Garden", datetime:"ראשון 27.12, 18:00", section:"Section 419, Row 6", seats:"3 יחד", price:"$1,565.76 ל-3 ($521.92 לכרטיס)", status:"שולם" },
+    activities:["דרבי העיר — האווירה הכי רועשת ב-MSG","יום חופשי עד המשחק: מוזיאון / קניות / Top of the Rock"],
+    notes:"היציע העליון ב-MSG תלול אבל האווירה מצוינת. זה המשחק שבו נחסכו הכי הרבה כסף בלי לוותר על משחק."
   },
   {
-    day:9, date:"12.12", weekday:"שבת", city:"טיסה חזרה", type:"חזרה",
-    title:"טיסה חזרה לישראל",
-    flight:{ dir:"חזור · NYC → TLV", airline:"Delta (ישירה)", flightNo:"TBD", dep:"TBD", arr:"TBD (יום למחרת)", pnr:"TBD", price:"כלול בהלוך-חזור ($854 לנוסע)", status:"TBD" },
-    activities:["פינוי מלון (שמירת מזוודות אם הטיסה בערב)","נסיעה לשדה התעופה (JFK/EWR)"],
-    notes:"טיסת מוצ\"ש — תלוי בזמינות. לאמת שעת המראה."
+    day:9, date:"28.12", weekday:"שני", city:"ניו יורק → טיסה", type:"חזרה",
+    title:"יום מלא בניו יורק וטיסה לילית הביתה",
+    flight:{ dir:"חזור · JFK → TLV", airline:"Delta (ישירה, A330-900neo) · Premium Select", flightNo:"DL0234", dep:"23:55 מ-JFK טרמינל 4", arr:"17:30 בנתב\"ג ביום שלישי 29.12 (10ש' 35ד')", pnr:"GQRZUG", price:"כלול בכרטיס הלוך-חזור", status:"שולם" },
+    hotel:{ name:"TBD", area:"צ'ק-אאוט בבוקר · אחסון מזוודות במלון", status:"TBD" },
+    activities:["בזכות הטיסה הלילית — יום מלא בעיר: אטרקציה אחרונה, קניות, ארוחת פרידה","יציאה למלון→JFK בסביבות 20:30"],
+    notes:"טיסת חזור לילית = יום שלם נוסף בניו יורק. סה\"כ ימי לימודים שהוחסרו: 8 (20–24 ו-27–29 בדצמבר)."
   }
 ];
