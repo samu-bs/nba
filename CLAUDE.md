@@ -165,7 +165,7 @@ Sixers/Philly). **User picked Philadelphia over the Knicks-Utah game at MSG.**
 |---|---|---|---|---|
 | Mon 21.12 | Nets vs Portland | Barclays | 19:30 | **COURTSIDE game** + Pre-Game Pass |
 | Wed 23.12 | **76ers vs Houston** | Philadelphia (**Xfinity Mobile Arena**, ex-Wells Fargo Center) | 19:30 | full Philly day; Prime Video national game |
-| Fri 25.12 | Knicks vs San Antonio | MSG | 12:00 | Christmas, 2026 Finals rematch; ends ~14:30, Shabbat ~16:15 |
+| Fri 25.12 | Knicks vs San Antonio | MSG | 12:00 | Christmas, 2026 Finals rematch; ends ~14:30, rest of day free |
 | Sun 27.12 | Knicks vs Nets | MSG | 18:00 | NY derby |
 
 - **Net effect: SAVES ~$800–900.** Sixers lower bowl ~$150–250/ticket vs Knicks-Utah $644, minus
@@ -179,7 +179,7 @@ Sixers/Philly). **User picked Philadelphia over the Knicks-Utah game at MSG.**
 - **Boston stays OUT** (only Celtics home game in-window is 28.12 20:00 vs the 23:55 JFK flight).
 - Free days: 22.12 (→ **book the MSG tour here**, non-game day = Knicks locker room open),
   24.12 (Christmas Eve), 26.12 (Shabbat), 28.12 (until ~20:30).
-- Barclays 26.12 Sat 18:00 Nets-Pelicans is NOT viable (Shabbat ends ~17:25, ~45min to Barclays).
+- ~~Barclays 26.12 Sat 18:00 Nets-Pelicans is NOT viable (Shabbat ends ~17:25)~~ — **SUPERSEDED 2026-08-25, see below.**
 - Revised ticket budget: **~$8,100–10,500 for 3 ≈ $2,700–3,500 pp** (incl. trains).
   Next cost lever if needed: 200-level on 27.12 too (−~$250 pp).
 - **Master doc: `מסלול-סופי-20-28.12.html`** — supersedes the earlier option docs.
@@ -227,7 +227,7 @@ tip-off. So: buy MSG now, defer the courtside decision to November at no risk.
   finalize hotel; travel insurance.
 - **November:** ⚠ **from 9 Nov, weekly check for the Barclays Pre-Game Pass** (releases 4–6 weeks
   ahead = 9–23 Nov); close the 21.12 courtside decision; buy Amtrak; **re-verify all four game times**
-  (25.12 ABC/ESPN and 23.12 Prime Video are national broadcasts and can move — critical vs Shabbat 16:15).
+  (25.12 ABC/ESPN and 23.12 Prime Video are national broadcasts and can move — the tip-off time drives the whole day plan).
 - **December:** ~6.12 transfer tickets to phones and verify they open; ~13.12 check-in and documents.
 
 ### Courtside decision framework (user still undecided as of 2026-08-17)
@@ -272,6 +272,24 @@ food $700–900.
 - Remaining levers: skip Barclays courtside (−$700–1,300 pp) · hotel outside Midtown (−~$270 pp) · leaner meals (−~$200 pp).
   First two together land at ~$5,600 pp excl. food.
 
+## ⚠️ SHABBAT IS NOT A CONSTRAINT (clarified by Yossi 2026-08-25)
+The family does **not** observe Shabbat. Every earlier note that shaped the plan around candle-lighting
+(16:15 on 25.12) or Shabbat ending (17:25 on 26.12) is **void**. Friday and Saturday are full touring days.
+
+Consequences already applied to `data/data.js`:
+- **Fri 25.12** — game ends 14:30 and the rest of the day is now programmed: ice skating, Times Square after
+  dark, Chinatown dinner (the classic NYC Christmas move), Empire State at night. Note that on 25.12 nearly
+  every NYC museum is closed (Met, MoMA, AMNH, 9/11), so the day is built only from things open on the holiday.
+- **Thu 24.12** — moved to a museum morning (AMNH or the Met), since 25.12 is closed and 26.12 may be busy.
+  Museums close early on Christmas Eve: Met ~17:00, AMNH ~17:30.
+- **Sat 26.12** — was "rest day", now a full downtown + Brooklyn day: 9/11 Memorial, Oculus, Wall Street,
+  Staten Island ferry, Brooklyn Bridge walk to DUMBO at sunset. Route deliberately ends 10 min from Barclays.
+- **⚪ NEW OPTION — Nets vs Pelicans @ Barclays, Sat 26.12, 18:00.** Previously ruled out for Shabbat only.
+  Lower bowl ~$150–400 pp. Yossi's call (2026-08-25): **flag it, decide in November** alongside the 21.12
+  tickets — Saturday-night resale doesn't soften the way a Monday game does, so it needs a real price check.
+  Counter-argument on record: three game nights in four days (25, 26, 27) is a heavy rhythm, and the budget
+  is already over by $1,150–2,150 pp.
+
 ## Still-open questions
 0. ✅ RESOLVED — dates locked, Option C (20–28.12), Christmas not Hanukkah.
 1. ✅ RESOLVED — Philadelphia added (76ers day-trip from NYC), tickets bought.
@@ -279,8 +297,10 @@ food $700–900.
 3. **21.12 Barclays: courtside or lower bowl (sections 3/16)?** The only remaining decision with real cost.
    No urgency — Monday night vs a weak opponent, resale softens closer to tip-off. Decide in November.
 4. Hotel not yet booked — largest remaining line item (~$1,330–1,600 pp). Book 2–3 free-cancellation options to compare.
-5. Overnight in Philadelphia on 23.12 (~$200) instead of the 23:40 last train back?
-6. How much to invest in paid meet&greet? Current answer: nothing — no credible product exists. Money is
+5. **⚪ Add the 26.12 Nets–Pelicans game at Barclays as a 5th game?** Unlocked by the Shabbat clarification.
+   Flagged as an option; decide in November with the 21.12 tickets.
+6. Overnight in Philadelphia on 23.12 (~$200) instead of the 23:40 last train back?
+7. How much to invest in paid meet&greet? Current answer: nothing — no credible product exists. Money is
    better spent on the $75 Pre-Game Pass and the Garden of Dreams auctions.
 
 ## Reference
