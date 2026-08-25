@@ -3,147 +3,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>תוכנית הטיול — יום-יום · טיול בר מצווה NBA</title>
+<title>יומן יומי — טיול בר מצווה NBA 2026</title>
 <style>
   :root{
-    --blue:#1d428a; --orange:#f58426; --navy:#0b1f3a;
-    --bg:#f4f6fb; --gray:#6b7685; --text:#1a2233; --card:#fff;
-    --shadow:0 4px 14px rgba(29,66,138,.10);
-    --tbd-bg:#fff4e6; --tbd-bd:#f6c98a; --tbd-tx:#b3690f;
-    --ok-bg:#e6f6ec; --ok-bd:#a6dcb8; --ok-tx:#1f7a44;
+    --bg:#f4f6fb; --card:#ffffff; --ink:#1a2233; --muted:#6b7685;
+    --brand:#1d428a; --brand-dark:#0b1f3a; --accent:#f58426; --gold:#c99a2e;
+    --line:#e3e8f0; --shadow:0 4px 18px rgba(20,35,60,.09); --radius:16px;
   }
-  *{box-sizing:border-box;}
-  body{margin:0;font-family:"Segoe UI","Helvetica Neue",Arial,"Noto Sans Hebrew",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
-  a{color:var(--blue);}
-  header{background:var(--navy);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,.2);position:sticky;top:0;z-index:1000;}
-  header .brand{font-weight:800;font-size:18px;}
-  nav a{color:#fff;text-decoration:none;margin-inline-start:18px;font-size:15px;opacity:.9;border-bottom:2px solid transparent;padding-bottom:3px;}
-  nav a:hover,nav a.active{opacity:1;border-bottom-color:var(--orange);}
-  .hero{background:linear-gradient(135deg,var(--blue),#13306b);color:#fff;padding:40px 20px 34px;text-align:center;}
-  .hero h1{margin:0 0 8px;font-size:28px;}
-  .hero p{margin:0 auto;max-width:680px;font-size:15px;opacity:.94;}
-  .schednote{max-width:880px;margin:18px auto 0;background:var(--tbd-bg);border:1px solid var(--tbd-bd);color:var(--tbd-tx);border-radius:12px;padding:12px 16px;font-size:14px;}
-  .wrap{max-width:880px;margin:0 auto;padding:26px 16px 60px;}
-  .day{background:var(--card);border-radius:16px;box-shadow:var(--shadow);margin-bottom:18px;overflow:hidden;scroll-margin-top:74px;}
-  .dhead{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(135deg,var(--blue),#2a52a0);color:#fff;}
-  .dhead .num{background:#fff;color:var(--blue);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0;}
-  .dhead .meta{flex:1;min-width:160px;}
-  .dhead .dt{font-size:12.5px;opacity:.9;}
-  .dhead .meta h3{margin:2px 0 0;font-size:18px;}
-  .dhead .city{font-size:12.5px;background:rgba(255,255,255,.2);border-radius:10px;padding:3px 11px;}
-  .dbody{padding:14px 18px 18px;}
-  .block{border:1px solid #e7ebf3;border-radius:12px;padding:12px 14px;margin-top:12px;}
-  .block:first-child{margin-top:0;}
-  .block h4{margin:0 0 8px;font-size:14.5px;color:var(--navy);display:flex;align-items:center;gap:8px;}
-  .block h4 .ttl{flex:1;}
-  .badge{font-size:11.5px;border-radius:20px;padding:2px 10px;font-weight:700;white-space:nowrap;}
-  .badge.tbd{background:var(--tbd-bg);border:1px solid var(--tbd-bd);color:var(--tbd-tx);}
-  .badge.ok{background:var(--ok-bg);border:1px solid var(--ok-bd);color:var(--ok-tx);}
-  .badge.court{background:var(--orange);color:#fff;}
-  .fields{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13.5px;}
-  .fields dt{color:var(--gray);}
-  .fields dd{margin:0;font-weight:600;}
-  .tbd-val{color:var(--tbd-tx);background:var(--tbd-bg);border-radius:6px;padding:0 7px;font-weight:700;}
-  ul.acts{margin:6px 0 0;padding-inline-start:20px;}
-  ul.acts li{margin-bottom:4px;font-size:14px;}
-  .notes{margin-top:12px;font-size:13.5px;color:#5a6470;background:#eef2f8;border-radius:10px;padding:9px 13px;}
-  .notes::before{content:"📝 ";}
-  .typeflag{font-size:11.5px;border-radius:10px;padding:3px 11px;font-weight:700;}
-  .t-קורטסייד{background:var(--orange);color:#fff;}
-  .t-משחק{background:var(--blue);color:#fff;}
-  .t-מעבר,.t-חופשי,.t-רזרבה{background:var(--gray);color:#fff;}
-  .t-קורטסייד{background:var(--orange);color:#fff;}
-  .t-הגעה,.t-חזרה{background:#2779bd;color:#fff;}
-  footer{text-align:center;color:var(--gray);font-size:13px;padding:24px;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",Rubik,Arial,"Noto Sans Hebrew",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+  a{color:var(--brand)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 16px 70px}
+
+  header.top{background:var(--brand-dark);color:#fff;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:10px 18px}
+  header.top .brand{font-weight:700;font-size:16px}
+  header.top nav{display:flex;flex-wrap:wrap;gap:4px;margin-inline-start:auto}
+  header.top nav a{color:#fff;text-decoration:none;font-size:14px;padding:5px 11px;border-radius:8px;opacity:.85}
+  header.top nav a:hover{background:rgba(255,255,255,.15);opacity:1}
+  header.top nav a.active{background:rgba(255,255,255,.22);opacity:1}
+
+  .hero{background:linear-gradient(135deg,var(--brand-dark),var(--brand));color:#fff;padding:26px 0 22px;box-shadow:var(--shadow)}
+  .hero h1{margin:0 0 4px;font-size:26px}
+  .hero .sub{opacity:.92;font-size:14.5px;margin-bottom:14px}
+  .stats{display:flex;flex-wrap:wrap;gap:10px}
+  .stat{background:rgba(255,255,255,.14);border-radius:12px;padding:7px 14px;font-size:13.5px}
+  .stat b{display:block;font-size:18px}
+
+  .daynav{display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:500;background:var(--bg);padding:14px 0 10px}
+  .arrow{background:var(--card);border:1px solid var(--line);width:42px;height:42px;border-radius:50%;font-size:20px;cursor:pointer;color:var(--brand);box-shadow:var(--shadow);flex:none}
+  .arrow:disabled{opacity:.35;cursor:default}
+  .daystrip{overflow-x:auto;padding:4px 2px;flex:1}
+  .daygrid{display:grid;gap:8px 6px;align-items:stretch}
+  .daybtn{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:6px;cursor:pointer;text-align:center;font-size:11.5px;color:var(--muted);min-width:64px;position:relative}
+  .daybtn b{display:block;font-size:16px;color:var(--ink)}
+  .daybtn .ball{position:absolute;top:3px;inset-inline-end:4px;font-size:11px;line-height:1}
+  .daybtn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  .daybtn.active b{color:#fff}
+  .baseseg{border:none;border-radius:8px;cursor:pointer;font-size:11.5px;font-weight:700;color:#fff;background:var(--bc);display:flex;align-items:center;justify-content:center;gap:5px;padding:5px 6px;overflow:hidden;white-space:nowrap;opacity:.5;transition:.15s;min-width:0}
+  .baseseg.active{opacity:1;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+  .baseseg .bsn{font-weight:600;opacity:.9;font-size:10px}
+
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:18px}
+  .card .pad{padding:18px 20px}
+  .badge{display:inline-block;background:#eaf0fa;color:var(--brand);border-radius:999px;padding:3px 12px;font-size:13px;font-weight:600;margin:0 6px 6px 0}
+  .badge.drive{background:#fdf1e8;color:#b45a22}
+  .badge.type{background:#eef2f8;color:#3a4a63}
+  .badge.paid{background:#e6f6ec;color:#1f7a44}
+  .badge.tbd{background:#fff4e6;color:#b3690f}
+  .daytitle{font-size:21px;color:var(--brand);margin:6px 0 2px}
+  .daymeta{color:var(--muted);font-size:14px;margin-bottom:12px}
+
+  .timeline{list-style:none;margin:6px 0 0;padding:0}
+  .timeline li{display:flex;gap:12px;padding:7px 0}
+  .timeline .t{flex:none;width:74px;font-weight:700;color:var(--accent);font-size:13px;text-align:start;padding-top:2px}
+  .timeline .d{position:relative;padding-inline-start:16px;border-inline-start:2px solid var(--line);flex:1}
+  .timeline .d::before{content:"";position:absolute;inset-inline-start:-6px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--brand);border:2px solid #fff}
+  .timeline li.move .d::before{background:var(--accent)}
+  .timeline li.move .t{color:#b45a22}
+  .timeline li.flight .d::before{background:#2779bd}
+  .timeline li.flight .t{color:#2779bd}
+  .timeline li.game .d::before{background:var(--accent);width:14px;height:14px;top:7px;inset-inline-start:-8px}
+  .timeline li.game .dtext{font-weight:700;color:var(--brand)}
+  .timeline li.ticket .d::before{background:#1f7a44}
+  .timeline li.ticket .t{color:#1f7a44}
+  .timeline li.free .d::before{background:#b9c3d3}
+  .timeline li.free .t{color:var(--muted)}
+
+  .infogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:14px}
+  .info{border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:13.5px}
+  .info h4{margin:0 0 7px;font-size:13.5px;color:var(--brand-dark);display:flex;align-items:center;gap:7px}
+  .info h4 .ttl{flex:1}
+  .info dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0;font-size:13px}
+  .info dt{color:var(--muted)}
+  .info dd{margin:0;font-weight:600}
+  .tbdval{color:#b3690f;background:#fff4e6;border-radius:6px;padding:0 6px;font-weight:700}
+  .info.court{border-color:var(--accent);border-width:2px}
+
+  .note{background:#fff8e8;border-inline-start:4px solid var(--gold);padding:10px 14px;border-radius:8px;margin-top:14px;font-size:13.5px}
+  .note.warn{background:#fdecec;border-inline-start-color:#d64545}
+
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:22px}
+  @media(max-width:640px){ .timeline .t{width:60px;font-size:12px} .hero h1{font-size:21px} }
 </style>
 </head>
 <body>
-<header>
+<header class="top">
   <div class="brand">🏀 בר מצווה NBA · 20–28.12.2026</div>
   <nav>
     <a href="index.html">בית</a>
     <a href="planning.html">תכנון</a>
-    <a href="trip.html" class="active">תוכנית הטיול</a>
+    <a href="trip.html" class="active">📅 יומן יומי</a>
   </nav>
 </header>
 
 <div class="hero">
-  <h1>🗓️ תוכנית הטיול — יום אחר יום</h1>
-  <p>20–28 בדצמבר 2026 · ניו יורק + פילדלפיה · 4 משחקים · נחיתה בארץ 29.12. מה שכבר שולם מסומן <b>✓ שולם</b>, וכל מה שנשאר להזמין מסומן <b>TBD</b>.</p>
-  <div class="schednote" id="schednote"></div>
+  <div class="wrap" style="padding-bottom:0">
+    <h1>📅 יומן יומי — ניו יורק, דצמבר 2026</h1>
+    <div class="sub" id="heroSub">20–28 בדצמבר · 3 נוסעים · לחיצה על יום פותחת את הלוז המלא</div>
+    <div class="stats">
+      <div class="stat"><b>9</b>ימים</div>
+      <div class="stat"><b>8</b>לילות</div>
+      <div class="stat"><b>4</b>משחקים</div>
+      <div class="stat"><b>2</b>ערים</div>
+      <div class="stat"><b>3</b>נוסעים</div>
+    </div>
+  </div>
 </div>
 
-<div class="wrap" id="days"></div>
+<div class="wrap">
+  <div class="daynav">
+    <button class="arrow" id="prevDay">›</button>
+    <div class="daystrip"><div class="daygrid" id="daygrid"></div></div>
+    <button class="arrow" id="nextDay">‹</button>
+  </div>
+  <div id="dayContent"></div>
+</div>
 
-<footer>עדכנו את הנתונים בקובץ <code>data/data.js</code>. הסטטוסים יתעדכנו מ-TBD למאושר ככל שמזמינים.</footer>
+<footer>היומן נטען מנתוני הטיול (<code>data/data.js</code>) · עודכן 25 באוגוסט 2026</footer>
 
-<script src="../data/data.js"></script>
+<script src="../data/data.js?v=20260825"></script>
 <script>
-  document.getElementById('schednote').textContent = "⏳ " + META.scheduleNote;
+  const days = window.TRIP;
+  const esc = s => (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const isTBD = v => v===undefined||v===null||v===''||(typeof v==='string'&&v.toUpperCase().includes('TBD'));
+  const val = v => isTBD(v) ? `<span class="tbdval">${esc(v)||'TBD'}</span>` : esc(v);
+  const statusBadge = s => isTBD(s)
+      ? `<span class="badge tbd">${esc(s)||'TBD'}</span>`
+      : `<span class="badge paid">✓ ${esc(s)}</span>`;
+  function dl(rows){ return `<dl>`+rows.filter(r=>r&&r[1]).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${val(v)}</dd>`).join('')+`</dl>`; }
 
-  const isTBD = v => v===undefined || v===null || v==="" || (typeof v==="string" && v.toUpperCase().includes("TBD"));
-  const val = v => isTBD(v) ? `<span class="tbd-val">${v||"TBD"}</span>` : v;
-  function statusBadge(s){
-    if(isTBD(s)) return `<span class="badge tbd">${s||"TBD"}</span>`;
-    return `<span class="badge ok">✓ ${s}</span>`;
+  /* ===== phase segments (contiguous runs of the same seg) ===== */
+  const PALETTE=["#2779bd","#1d428a","#8e5bc4","#c0392b","#3a9d8c"];
+  const groups=[]; days.forEach((d,i)=>{ const l=groups[groups.length-1];
+    if(l && l.base===d.seg){ l.end=i; } else groups.push({base:d.seg,start:i,end:i}); });
+  groups.forEach((g,gi)=>g.color=PALETTE[gi%PALETTE.length]);
+
+  /* ===== day strip ===== */
+  const dayCells=days.map((d,i)=>
+    `<button class="daybtn" data-i="${i}" style="grid-row:1;grid-column:${i+1}">
+       ${d.game?'<span class="ball">🏀</span>':''}
+       <b>${d.day}</b>${esc(d.weekday)}<br>${esc(d.date)}
+     </button>`).join('');
+  const segCells=groups.map(g=>{ const span=g.end-g.start+1;
+    return `<button class="baseseg" data-i="${g.start}" data-gs="${g.start}" data-ge="${g.end}" title="${esc(g.base)}"
+             style="grid-row:2;grid-column:${g.start+1}/${g.end+2};--bc:${g.color}">
+             <span>${esc(g.base)}</span>${span>1?`<span class="bsn">${span} ימים</span>`:''}</button>`;}).join('');
+  const grid=document.getElementById('daygrid');
+  grid.style.gridTemplateColumns=`repeat(${days.length},minmax(64px,1fr))`;
+  grid.innerHTML=dayCells+segCells;
+
+  const TYPEICON={ "משחק":"🏀 משחק", "הגעה":"🛬 הגעה", "חזרה":"🛫 חזרה", "חופשי":"🗽 יום חופשי", "מעבר":"🚆 מעבר" };
+
+  let cur=0;
+  function render(i){
+    cur=i; const d=days[i];
+    document.querySelectorAll('#daygrid .daybtn').forEach((b,k)=>b.classList.toggle('active',k===i));
+    document.querySelectorAll('#daygrid .baseseg').forEach(s=>s.classList.toggle('active', i>=+s.dataset.gs && i<=+s.dataset.ge));
+    document.getElementById('prevDay').disabled=i===0;
+    document.getElementById('nextDay').disabled=i===days.length-1;
+    const ab=document.querySelectorAll('#daygrid .daybtn')[i];
+    if(ab && ab.scrollIntoView) ab.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+
+    /* timeline */
+    const rows=(d.sched||[]).map(s=>
+      `<li class="${esc(s.kind||'')}"><div class="t">${esc(s.time)}</div>
+        <div class="d"><div class="dtext">${esc(s.txt)}</div></div></li>`).join('');
+
+    /* info blocks */
+    let info='';
+    if(d.game){ const g=d.game; const court=/קורטסייד/.test(g.tier||'');
+      info+=`<div class="info${court?' court':''}"><h4>🎟️ <span class="ttl">כרטיסים למשחק</span>${statusBadge(g.status)}</h4>`
+        + dl([["משחק",g.matchup],["איצטדיון",g.arena],["מועד",g.datetime],["סוג מושב",g.tier],["מיקום",g.section],["מושבים",g.seats],["מחיר",g.price]])+`</div>`; }
+    if(d.experience){ const e=d.experience;
+      info+=`<div class="info"><h4>🤝 <span class="ttl">חוויה</span>${statusBadge(e.status)}</h4>`
+        + dl([["מה",e.name],["דרך",e.provider]])+`</div>`; }
+    if(d.flight){ const f=d.flight;
+      info+=`<div class="info"><h4>✈️ <span class="ttl">טיסה — ${esc(f.dir||'')}</span>${statusBadge(f.status)}</h4>`
+        + dl([["חברה",f.airline],["טיסה",f.flightNo],["המראה",f.dep],["נחיתה",f.arr],["אישור",f.pnr],["מחיר",f.price]])+`</div>`; }
+    if(d.transport){ const t=d.transport;
+      info+=`<div class="info"><h4>🚆 <span class="ttl">מעבר בין ערים</span>${statusBadge(t.status)}</h4>`
+        + dl([["אמצעי",t.mode],["מסלול",t.route],["משך",t.duration],["אסמכתה",t.ref],["מחיר",t.price]])+`</div>`; }
+    if(d.hotel){ const h=d.hotel;
+      info+=`<div class="info"><h4>🏨 <span class="ttl">לינה</span>${statusBadge(h.status)}</h4>`
+        + dl([["מלון",h.name],["אזור",h.area],["צ'ק-אין",h.checkin],["צ'ק-אאוט",h.checkout],["לילות",h.nights],["מחיר/לילה",h.pricePerNight]])+`</div>`; }
+
+    const noteCls = (d.notes && /⚠️/.test(d.notes)) ? 'note warn' : 'note';
+    const hotelLine = d.hotel && !isTBD(d.hotel.name) ? `🏨 ${esc(d.hotel.name)} · ` : '';
+
+    document.getElementById('dayContent').innerHTML=`
+      <div class="card"><div class="pad">
+        <div>
+          <span class="badge">יום ${d.day} · ${esc(d.weekday)} · ${esc(d.date)}.2026</span>
+          <span class="badge type">${TYPEICON[d.type]||esc(d.type)}</span>
+          ${d.game?statusBadge(d.game.status):''}
+        </div>
+        <h3 class="daytitle">${esc(d.title)}</h3>
+        <div class="daymeta">${hotelLine}📍 ${esc(d.city)}${d.seg && d.seg!==d.city?` · ${esc(d.seg)}`:''}</div>
+        <ul class="timeline">${rows}</ul>
+        ${info?`<div class="infogrid">${info}</div>`:''}
+        ${d.notes?`<div class="${noteCls}">📌 ${esc(d.notes)}</div>`:''}
+      </div></div>`;
+    history.replaceState(null,'','#day-'+d.day);
   }
-  function fields(rows){
-    return `<dl class="fields">` + rows.filter(r=>r).map(([k,v])=>`<dt>${k}</dt><dd>${val(v)}</dd>`).join('') + `</dl>`;
-  }
 
-  const wrap = document.getElementById('days');
-  TRIP.forEach(d=>{
-    let blocks = '';
+  document.getElementById('daygrid').addEventListener('click',e=>{ const b=e.target.closest('[data-i]'); if(b) render(+b.dataset.i); });
+  document.getElementById('prevDay').addEventListener('click',()=>{ if(cur>0) render(cur-1); });
+  document.getElementById('nextDay').addEventListener('click',()=>{ if(cur<days.length-1) render(cur+1); });
 
-    if(d.flight){
-      const f=d.flight;
-      blocks += `<div class="block"><h4>✈️ <span class="ttl">טיסה — ${f.dir||''}</span>${statusBadge(f.status)}</h4>`
-        + fields([["חברה",f.airline],["מס' טיסה",f.flightNo],["המראה",f.dep],["נחיתה",f.arr],["קוד הזמנה (PNR)",f.pnr],["מחיר",f.price]]) + `</div>`;
-    }
-    if(d.transport){
-      const t=d.transport;
-      blocks += `<div class="block"><h4>🚆 <span class="ttl">מעבר בין ערים</span>${statusBadge(t.status)}</h4>`
-        + fields([["אמצעי",t.mode],["מסלול",t.route],["משך",t.duration],["אסמכתה",t.ref],["מחיר",t.price]]) + `</div>`;
-    }
-    if(d.hotel){
-      const h=d.hotel;
-      blocks += `<div class="block"><h4>🏨 <span class="ttl">לינה — ${h.area||''}</span>${statusBadge(h.status)}</h4>`
-        + fields([["מלון",h.name],["צ'ק-אין",h.checkin],["צ'ק-אאוט",h.checkout],["לילות",h.nights],["אישור הזמנה",h.confirmation],["מחיר/לילה",h.pricePerNight]]) + `</div>`;
-    }
-    if(d.game){
-      const g=d.game;
-      const tierBadge = (g.tier&&g.tier.includes("קורטסייד")) ? `<span class="badge court">🏀 קורטסייד</span>` : '';
-      blocks += `<div class="block"><h4>🎟️ <span class="ttl">משחק וכרטיסים</span>${tierBadge}${statusBadge(g.status)}</h4>`
-        + fields([["סוג מושב",g.tier],["משחק",g.matchup],["איצטדיון",g.arena],["תאריך ושעה",g.datetime],["אזור/Section",g.section],["מושבים",g.seats],["מחיר",g.price]]) + `</div>`;
-    }
-    if(d.experience){
-      const e=d.experience;
-      blocks += `<div class="block"><h4>🤝 <span class="ttl">חוויה על הפרקט</span>${statusBadge(e.status)}</h4>`
-        + fields([["חוויה",e.name],["דרך",e.provider]]) + `</div>`;
-    }
-    if(d.activities && d.activities.length){
-      blocks += `<div class="block"><h4>📍 <span class="ttl">פעילויות היום</span></h4><ul class="acts">`
-        + d.activities.map(a=>`<li>${a}</li>`).join('') + `</ul></div>`;
-    }
-    if(d.notes){ blocks += `<div class="notes">${d.notes}</div>`; }
-
-    const card = document.createElement('div');
-    card.className='day'; card.id='day-'+d.day;
-    card.innerHTML =
-      `<div class="dhead">
-         <div class="num">${d.day}</div>
-         <div class="meta"><div class="dt">${d.weekday} · ${d.date}.2026</div><h3>${d.title}</h3></div>
-         <span class="city">📍 ${d.city}</span>
-         <span class="typeflag t-${d.type}">${d.type}</span>
-       </div>
-       <div class="dbody">${blocks}</div>`;
-    wrap.appendChild(card);
-  });
-
-  if(location.hash){
-    const t=document.getElementById(location.hash.slice(1));
-    if(t) setTimeout(()=>t.scrollIntoView({behavior:'smooth'}),120);
-  }
+  let start=0; const hm=location.hash.match(/day-(\d+)/);
+  if(hm){ const idx=days.findIndex(d=>d.day==+hm[1]); if(idx>=0) start=idx; }
+  render(start);
 </script>
 </body>
 </html>
