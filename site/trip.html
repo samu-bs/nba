@@ -123,7 +123,13 @@
 
 <script src="../data/data.js?v=20260825"></script>
 <script>
-  const days = window.TRIP;
+  /* TRIP מוגדר ב-data.js עם const — לכן הוא לא נמצא על window, אלא בסקופ הגלובלי */
+  const days = (typeof TRIP !== 'undefined') ? TRIP : (window.TRIP || []);
+  if(!days.length){
+    document.getElementById('dayContent').innerHTML =
+      '<div class="card"><div class="pad"><h3 class="daytitle">לא נטענו נתוני הטיול</h3>'
+      + '<div class="daymeta">הקובץ <code>data/data.js</code> לא נטען. רעננו את הדף (Ctrl/Cmd+Shift+R).</div></div></div>';
+  }
   const esc = s => (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   const isTBD = v => v===undefined||v===null||v===''||(typeof v==='string'&&v.toUpperCase().includes('TBD'));
   const val = v => isTBD(v) ? `<span class="tbdval">${esc(v)||'TBD'}</span>` : esc(v);
@@ -203,16 +209,19 @@
         ${info?`<div class="infogrid">${info}</div>`:''}
         ${d.notes?`<div class="${noteCls}">📌 ${esc(d.notes)}</div>`:''}
       </div></div>`;
-    history.replaceState(null,'','#day-'+d.day);
+    /* try/catch — פתיחת הקובץ מקומית ב-file:// חוסמת replaceState */
+    try{ history.replaceState(null,'','#day-'+d.day); }catch(e){ /* ignore */ }
   }
 
   document.getElementById('daygrid').addEventListener('click',e=>{ const b=e.target.closest('[data-i]'); if(b) render(+b.dataset.i); });
   document.getElementById('prevDay').addEventListener('click',()=>{ if(cur>0) render(cur-1); });
   document.getElementById('nextDay').addEventListener('click',()=>{ if(cur<days.length-1) render(cur+1); });
 
-  let start=0; const hm=location.hash.match(/day-(\d+)/);
-  if(hm){ const idx=days.findIndex(d=>d.day==+hm[1]); if(idx>=0) start=idx; }
-  render(start);
+  if(days.length){
+    let start=0; const hm=location.hash.match(/day-(\d+)/);
+    if(hm){ const idx=days.findIndex(d=>d.day==+hm[1]); if(idx>=0) start=idx; }
+    render(start);
+  }
 </script>
 </body>
 </html>
