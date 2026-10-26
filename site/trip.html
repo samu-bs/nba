@@ -179,7 +179,7 @@
     let info='';
     if(d.game){ const g=d.game; const court=/קורטסייד/.test(g.tier||'');
       info+=`<div class="info${court?' court':''}"><h4>🎟️ <span class="ttl">כרטיסים למשחק</span>${statusBadge(g.status)}</h4>`
-        + dl([["משחק",g.matchup],["איצטדיון",g.arena],["מועד",g.datetime],["סוג מושב",g.tier],["מיקום",g.section],["מושבים",g.seats],["מחיר",g.price]])+`</div>`; }
+        + dl([["משחק",g.matchup],["איצטדיון",g.arena],["מועד",g.datetime],["סוג מושב",g.tier],["מיקום",g.section],["מושבים",g.seats],["מחיר",g.price],["📱 איפה הכרטיס",g.wallet]])+`</div>`; }
     if(d.experience){ const e=d.experience;
       info+=`<div class="info"><h4>🤝 <span class="ttl">חוויה</span>${statusBadge(e.status)}</h4>`
         + dl([["מה",e.name],["דרך",e.provider]])+`</div>`; }

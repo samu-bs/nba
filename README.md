@@ -13,6 +13,14 @@
 | ו׳ 25.12 | ניקס מול ספרס (קריסמס) | Madison Square Garden | ✅ שולם |
 | א׳ 27.12 | ניקס מול נטס (דרבי) | Madison Square Garden | ✅ שולם |
 
+### 📱 איפה כל כרטיס (חשבון benshushanster@gmail.com)
+| משחק | אפליקציה | מצב |
+|---|---|---|
+| 21.12 נטס–פורטלנד | Brooklyn Nets App | ✅ התקבל |
+| 23.12 76ers–יוסטון | MemberDeals 158908103 → מייל העברה מהספק המקורי | ⏳ עד 22.12 |
+| 25.12 ניקס–ספרס | Ticketmaster / אפליקציית MSG (חשבון 121033183) — לא SeatGeek | ✅ הועבר 9.10 |
+| 27.12 ניקס–נטס | MemberDeals 158004133 → צפוי ל-Ticketmaster/MSG | ⏳ עד 26.12 |
+
 טיסות: Delta DL0249 ב-20.12 · DL0234 ב-28.12 · ישירות · אישור GQRZUG.
 מלונות: NoMo SoHo 20–28.12 (Booking 6692267425) · Holiday Inn Express פילדלפיה 23→24.12 (Booking 6426025068).
 רכבת: Amtrak 4DB750 — Keystone 643 ב-23.12 09:28 · Keystone 644 ב-24.12 09:45.

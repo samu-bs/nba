@@ -2,6 +2,7 @@
    NBA Bar Mitzvah Trip — data layer
    עודכן: 26 באוקטובר 2026 — נסגרו: כרטיסי 21.12 בברקליס (קבוצה של 10), מלון NoMo SoHo בניו יורק,
    רכבת Amtrak לפילדלפיה הלוך-חזור, ומלון Holiday Inn Express בפילדלפיה (לילה 23→24.12).
+   + באיזו אפליקציה נמצא כל כרטיס משחק (שדה wallet) · תוקן מספר הזמנה שגוי ל-27.12.
    TRIP  → trip.html | META/STATUS/PURCHASES/BUDGET → index.html + planning.html
    ============================================================ */
 
@@ -17,14 +18,14 @@ const META = {
 /* ---- סטטוס כללי של ההזמנות ---- */
 const STATUS = [
   { item: "טיסות TLV↔JFK (Delta)",        state: "שולם", note: "DL249 ב-20.12 · DL234 ב-28.12 · אישור GQRZUG · $1,403 לנוסע" },
-  { item: "כרטיסים 21.12 — נטס מול פורטלנד", state: "שולם", note: "Barclays · Section 16 Row 11, מושבים 1–10 (ליד מנהרת השחקנים) · 10 כרטיסים דרך Group Sales (Ricky Hauser, 718-942-9567) · $92 לכרטיס, $920 סה״כ · החלק שלנו $276 · ללא החזר. ⚠️ לברר עם Ricky אם 10 הכרטיסים פותחים חוויית ילדים, ומה עושים עם הכרטיס העשירי" },
-  { item: "כרטיסים 23.12 — 76ers מול יוסטון", state: "שולם", note: "Xfinity Mobile Arena · Lower Level 102, שורות 19–20 · $2,929.92 ל-3. ⚠️ 6 החברים צריכים כרטיסים משלהם — לתאם ישיבה ליד סקשן 102" },
-  { item: "כרטיסים 25.12 — ניקס מול ספרס", state: "שולם", note: "MSG · Section 208 Row 21 · $2,764.14 ל-3 (SeatGeek 6P2-56932QP)" },
-  { item: "כרטיסים 27.12 — ניקס מול נטס",  state: "שולם", note: "MSG · Section 419 Row 6 · $1,565.76 ל-3 (MemberDeals 158908103)" },
+  { item: "כרטיסים 21.12 — נטס מול פורטלנד", state: "שולם", note: "Barclays · Section 16 Row 11, מושבים 1–10 (ליד מנהרת השחקנים) · 10 כרטיסים דרך Group Sales (Ricky Hauser, 718-942-9567) · $92 לכרטיס, $920 סה״כ · החלק שלנו $276 · ללא החזר · 📱 בטלפון: Brooklyn Nets App → Tickets → Manage My Tickets → View My Tickets ✓ התקבל. ⚠️ לברר עם Ricky אם 10 הכרטיסים פותחים חוויית ילדים, ומה עושים עם הכרטיס העשירי" },
+  { item: "כרטיסים 23.12 — 76ers מול יוסטון", state: "שולם", note: "Xfinity Mobile Arena · Lower Level 102, שורות 19–20 · $2,929.92 ל-3 (MemberDeals 158908103) · 📱 טרם נמסר — יגיע מייל העברה מהספק המקורי עד 22.12. ⚠️ 6 החברים צריכים כרטיסים משלהם — לתאם ישיבה ליד סקשן 102" },
+  { item: "כרטיסים 25.12 — ניקס מול ספרס", state: "שולם", note: "MSG · Section 208 Row 21 · $2,764.14 ל-3 (SeatGeek 6P2-56932QP) · 📱 הועבר ב-9.10 לחשבון Ticketmaster/MSG 121033183 — אפליקציית Knicks & Rangers (לא באפליקציית SeatGeek) · מושבים 22–24 ✓" },
+  { item: "כרטיסים 27.12 — ניקס מול נטס",  state: "שולם", note: "MSG · Section 419 Row 6 · $1,565.76 ל-3 (MemberDeals 158004133) · 📱 טרם נמסר — מועד אחרון 26.12 (!), צפוי להגיע לחשבון Ticketmaster/MSG. אם לא הגיע עד אמצע דצמבר — MemberDeals 833-751-7120" },
   { item: "מלון ניו יורק — NoMo SoHo (8 לילות)", state: "הוזמן", note: "9 Crosby St, סוהו · 20–28.12 · Double Deluxe, 2 מיטות · אישור Booking 6692267425 · $4,382.50, מתוכם Booking.com משלמים $276.06 → $4,106.44 עלינו · ביטול חינם עד 18.12 · פיקדון מוחזר $150 ללילה (עד $1,050) בצ׳ק-אין · ⚠️ רשום על שם דליה — לשנות שם אורח ליוסי" },
   { item: "רכבת Amtrak לפילדלפיה",         state: "הוזמן", note: "הזמנה 4DB750 · Keystone 643 ב-23.12 09:28→10:50 · Keystone 644 ב-24.12 09:45→11:05 · 3 מושבי Coach · ללא שינויים, 30% דמי ביטול · ⚠️ איתן רשום כ-CHILD (תעריף לגילאי 2–12 בלבד) — להסדיר מול Amtrak" },
   { item: "מלון פילדלפיה (לילה 23→24.12)", state: "הוזמן", note: "Holiday Inn Express Philadelphia-Midtown, 1305 Walnut · אישור Booking 6426025068 · 4 חדרים, 9 אורחים, ארוחת בוקר כלולה · $822.33 סה״כ, החדר שלנו (2 קווין) $196.85 · תשלום במלון · ביטול חינם עד 22.12 16:00 · ⚠️ כל 4 החדרים על שם דליה — לעדכן שמות אורחים" },
-  { item: "Pre-Game Pass ב-Barclays",     state: "TBD", note: "$75 לאדם · נמכר ליחידים · יוצא למכירה רק ~9–23 בנובמבר — לבדוק שבועית מ-9.11. לשאול את Ricky אם אפשר לצרף ל-9 דרך Group Sales" },
+  { item: "Pre-Game Pass ב-Barclays",     state: "TBD", note: "$75 לאדם · נמכר ליחידים · יוצא למכירה רק ~9–23 בנובמבר — לבדוק שבועית מ-9.11. 26.10: לא נמצא ב-Ticketmaster — נשלחה בקשה ל-Ricky לעזור לרכוש דרך Group Sales, ממתינים לתשובה" },
   { item: "⚪ אופציה: 26.12 — נטס מול פליקנס", state: "TBD", note: "Barclays, מוצ\"ש 18:00. יציע תחתון ~$150–400 לאדם. להחליט בנובמבר" },
   { item: "Independence Hall — כרטיסים מתוזמנים", state: "TBD", note: "23.12 ~15:15 · 9 כרטיסים · recreation.gov, $1 לכרטיס" },
   { item: "⚪ חוויית קבוצה של הסיקסרס (High-Five Tunnel וכו׳)", state: "TBD", note: "מינימום 10 אנשים — אנחנו 9. לפנות ל-Group Sales ולשאול אם רכישת 10 כרטיסים דרכם פותחת את החוויה" },
@@ -40,19 +41,19 @@ const PURCHASES = [
     date:"15.8.2026", unit:"$1,403.00 × 3", total:4209.00,
     note:"הוחלף מהתאריכים המקוריים בחנוכה. שולם $1,236 ECredit + $167 מזומן לנוסע." },
   { cat:"כרטיסי משחק", item:"21.12 · נטס מול פורטלנד @ Barclays Center",
-    detail:"Section 16 Row 11, מושבים 1–10 · 19:30 · Brooklyn Nets Group Sales (Ricky Hauser) · Account 78307421",
+    detail:"Section 16 Row 11, מושבים 1–10 · 19:30 · Brooklyn Nets Group Sales (Ricky Hauser) · Account 78307421 · 📱 Brooklyn Nets App",
     date:"25.10.2026", unit:"$92.00 × 3 (מתוך 10 כרטיסים, $920)", total:276.00,
     note:"נקנו 10 כרטיסים לקבוצה של 9 (אנחנו + 3 זוגות החברים) — החברים מחזירים $552, והכרטיס העשירי ($92) פתוח. סקשן 16 = ליד מנהרת השחקנים, ושם מותר לבקש אוטוגרפים מהמושב. ללא החזר." },
   { cat:"כרטיסי משחק", item:"23.12 · 76ers מול יוסטון רוקטס @ Xfinity Mobile Arena",
-    detail:"Lower Level 102 — Row 20 ×2 ($879.20) + Row 19 ×1 ($1,171.52) · 19:30 · MemberDeals 158908103",
+    detail:"Lower Level 102 — Row 20 ×2 ($879.20) + Row 19 ×1 ($1,171.52) · 19:30 · MemberDeals 158908103 · 📱 יימסר עד 22.12",
     date:"22.8.2026", unit:"ממוצע $976.64 לכרטיס", total:2929.92,
     note:"⚠️ הרבה מעל ההערכה ($150–250 לכרטיס). הכרטיס השלישי הוא Zone Seating — המושב המדויק לא מובטח, והמושבים מפוצלים בין שתי שורות." },
   { cat:"כרטיסי משחק", item:"25.12 · ניקס מול סן אנטוניו @ MSG (קריסמס)",
-    detail:"Section 208 Row 21 · 12:00 · SeatGeek הזמנה 6P2-56932QP",
+    detail:"Section 208 Row 21 · 12:00 · SeatGeek הזמנה 6P2-56932QP · 📱 Ticketmaster / אפליקציית MSG (מושבים 22–24)",
     date:"17.8.2026", unit:"$786.00 + $135.38 עמלה × 3", total:2764.14,
     note:"רמה 200 — בדיוק המהלך החוסך שתוכנן (במקום יציע תחתון ב-$1,173+)." },
   { cat:"כרטיסי משחק", item:"27.12 · ניקס מול ברוקלין נטס @ MSG (דרבי)",
-    detail:"Section 419 Row 6 · 18:00 · MemberDeals",
+    detail:"Section 419 Row 6 · 18:00 · MemberDeals 158004133 · 📱 יימסר עד 26.12",
     date:"17.8.2026", unit:"$521.92 × 3", total:1565.76,
     note:"רמה 400 (יציע עליון) — חסך ~$255 לכרטיס מול היציע התחתון." },
   { cat:"מלון", item:"NoMo SoHo, ניו יורק — 8 לילות (20–28.12)",
@@ -115,7 +116,7 @@ const TRIP = [
     day:2, date:"21.12", weekday:"שני", city:"ברוקלין", type:"משחק", seg:"ברוקלין + מנהטן",
     title:"נטס מול פורטלנד @ Barclays Center — עם 3 זוגות החברים",
     hotel:HOTEL_NY,
-    game:{ tier:"יציע תחתון — Section 16, ליד מנהרת השחקנים", matchup:"ברוקלין נטס מול פורטלנד טרייל בלייזרס", arena:"Barclays Center, ברוקלין", datetime:"שני 21.12, 19:30", section:"Section 16, Row 11", seats:"מושבים 1–10 יחד — 9 אנשים (אנחנו + 3 זוגות אב+בן) + כרטיס פנוי", price:"$92 לכרטיס · $920 ל-10 · החלק שלנו $276", status:"שולם" },
+    game:{ tier:"יציע תחתון — Section 16, ליד מנהרת השחקנים", matchup:"ברוקלין נטס מול פורטלנד טרייל בלייזרס", arena:"Barclays Center, ברוקלין", datetime:"שני 21.12, 19:30", section:"Section 16, Row 11", seats:"מושבים 1–10 יחד — 9 אנשים (אנחנו + 3 זוגות אב+בן) + כרטיס פנוי", price:"$92 לכרטיס · $920 ל-10 · החלק שלנו $276", status:"שולם", wallet:"Brooklyn Nets App → Tickets → Manage My Tickets → View My Tickets (התחברות עם benshushanster@gmail.com) · ✓ התקבל 26.10" },
     experience:{ name:"Pre-Game Pass — כניסה 1.5 שעות לפני הפתיחה הרגילה, מאחורי הקלעים, וצפייה בחימום של שתי הקבוצות ממושבי צד הפרקט", provider:"Barclays Center (Ticketmaster, נמכר ליחידים — $75 לאדם) · או דרך Ricky Hauser ב-Group Sales", status:"TBD" },
     sched:[
       { time:"10:00", txt:"בוקר חופשי במנהטן — NBA Store בשדרה החמישית", kind:"free" },
@@ -150,7 +151,7 @@ const TRIP = [
     title:"פילדלפיה — 76ers מול יוסטון רוקטס + לינה (עם 3 זוגות חברים)",
     transport:{ mode:"רכבת Amtrak Keystone — הלוך 643 ב-23.12, חזור 644 ב-24.12", route:"Moynihan Train Hall (מול Penn Station) ⇄ 30th Street Station", duration:"09:28→10:50 · חזור 09:45→11:05", ref:"Amtrak 4DB750 · 3 מושבי Coach", price:"⚠️ המחיר לא מופיע בכרטיס — להשלים", status:"הוזמן" },
     hotel:{ name:"Holiday Inn Express Philadelphia-Midtown", area:"1305 Walnut St, מרכז העיר · בלוק מקו Broad Street לאולם · ארוחת בוקר כלולה", checkin:"23.12 מ-15:00", checkout:"24.12 עד 11:00", nights:1, confirmation:"Booking.com 6426025068", pricePerNight:"$196.85 החדר שלנו (2 קווין) · $822.33 ל-4 החדרים", status:"הוזמן" },
-    game:{ tier:"יציע תחתון — Lower Level 102", matchup:"יוסטון רוקטס מול פילדלפיה 76ers", arena:"Xfinity Mobile Arena (Wells Fargo Center לשעבר), פילדלפיה", datetime:"רביעי 23.12, 19:30 (שידור ארצי ב-Prime Video)", section:"Lower Level 102 — שורה 20 (×2) ושורה 19 (×1)", seats:"3 — מפוצלים בין שתי שורות סמוכות", price:"$2,929.92 ל-3 (ממוצע $976.64 לכרטיס)", status:"שולם" },
+    game:{ tier:"יציע תחתון — Lower Level 102", matchup:"יוסטון רוקטס מול פילדלפיה 76ers", arena:"Xfinity Mobile Arena (Wells Fargo Center לשעבר), פילדלפיה", datetime:"רביעי 23.12, 19:30 (שידור ארצי ב-Prime Video)", section:"Lower Level 102 — שורה 20 (×2) ושורה 19 (×1)", seats:"3 — מפוצלים בין שתי שורות סמוכות", price:"$2,929.92 ל-3 (ממוצע $976.64 לכרטיס)", status:"שולם", wallet:"MemberDeals 158908103 — טרם נמסר. יגיע מייל העברה מהספק המקורי (כנראה Ticketmaster / אפליקציית הסיקסרס) עד 22.12" },
     sched:[
       { time:"08:20", txt:"יציאה מהמלון עם תיק קטן — המזוודות נשארות ב-NoMo · A/C/E מ-Canal St ל-34th St", kind:"move" },
       { time:"08:55", txt:"הגעה ל-Moynihan Train Hall (מול Penn Station, שדרה 8) — 30 דקות לפני", kind:"move" },
@@ -191,7 +192,7 @@ const TRIP = [
     day:6, date:"25.12", weekday:"שישי", city:"ניו יורק", type:"משחק", seg:"שבוע הקריסמס",
     title:"🎄 ניקס מול סן אנטוניו ספרס @ MSG — משחק הקריסמס",
     hotel:HOTEL_NY,
-    game:{ tier:"רמה 200", matchup:"סן אנטוניו ספרס מול ניו יורק ניקס — רימאץ' גמר 2026", arena:"Madison Square Garden", datetime:"שישי 25.12, 12:00 (מסתיים ~14:30)", section:"Section 208, Row 21", seats:"3 יחד", price:"$2,764.14 ל-3 ($921.38 לכרטיס כולל עמלה)", status:"שולם" },
+    game:{ tier:"רמה 200", matchup:"סן אנטוניו ספרס מול ניו יורק ניקס — רימאץ' גמר 2026", arena:"Madison Square Garden", datetime:"שישי 25.12, 12:00 (מסתיים ~14:30)", section:"Section 208, Row 21", seats:"3 יחד", price:"$2,764.14 ל-3 ($921.38 לכרטיס כולל עמלה)", status:"שולם", wallet:"Ticketmaster / אפליקציית Knicks & Rangers של MSG — חשבון 121033183 (לא באפליקציית SeatGeek) · מושבים 22–24 · ✓ הועבר 9.10" },
     sched:[
       { time:"09:30", txt:"יציאה ל-MSG — A/C/E מ-Canal St, ~10 דקות", kind:"move" },
       { time:"10:00", txt:"הגעה מוקדמת — כניסת השחקנים לאיצטדיון, 90–120 דקות לפני", kind:"ticket" },
@@ -227,7 +228,7 @@ const TRIP = [
     day:8, date:"27.12", weekday:"ראשון", city:"ניו יורק", type:"משחק", seg:"שבוע הקריסמס",
     title:"🗽 דרבי ניו יורק — ניקס מול נטס @ MSG",
     hotel:HOTEL_NY,
-    game:{ tier:"רמה 400 (יציע עליון)", matchup:"ברוקלין נטס מול ניו יורק ניקס", arena:"Madison Square Garden", datetime:"ראשון 27.12, 18:00", section:"Section 419, Row 6", seats:"3 יחד", price:"$1,565.76 ל-3 ($521.92 לכרטיס)", status:"שולם" },
+    game:{ tier:"רמה 400 (יציע עליון)", matchup:"ברוקלין נטס מול ניו יורק ניקס", arena:"Madison Square Garden", datetime:"ראשון 27.12, 18:00", section:"Section 419, Row 6", seats:"3 יחד", price:"$1,565.76 ל-3 ($521.92 לכרטיס)", status:"שולם", wallet:"MemberDeals 158004133 — טרם נמסר, מועד אחרון 26.12. צפוי להגיע לחשבון Ticketmaster/MSG (כמו 25.12)" },
     sched:[
       { time:"10:00", txt:"בוקר חופשי — מוזיאון / קניות בסוהו", kind:"free" },
       { time:"16:30", txt:"יציאה ל-MSG — A/C/E מ-Canal St", kind:"move" },
