@@ -351,3 +351,15 @@ vs NBATrips $7,000: ~$1,000 pp cheaper.
 - Still TBD: Pre-Game Pass (on sale ~9–23 Nov), MSG tour 22.12, Independence Hall ×9, ESTA, insurance, friends' 23.12 tickets, 26.12 option.
 - SoHo base: Canal St (A/C/E → MSG/Moynihan ~10 min), Broadway–Lafayette (B/D → Barclays ~20 min); Chinatown 10 min walk.
 - Site updated: `data/data.js` (STATUS/PURCHASES/BUDGET/TRIP), `site/planning.html`, `site/index.html`, `site/trip.html` (shows hotel confirmation), master doc.
+
+## DAY-BY-DAY FILL + DINING (2026-10-26)
+Every day now has a full schedule in `data/data.js` with a `dining` field (rendered as "איפה אוכלים" card on trip.html) and
+new timeline kinds `food` / `shop`. Rockefeller tree + Saks + Fifth Ave windows moved to **22.12** (weekday, far less crowded);
+24.12 = AMNH straight from Moynihan → Central Park → shopping before ~18:00 close → Bryant Park → Times Square → dinner → tree at night.
+- **24.12 Christmas Eve dinner for 9 (friends join in NYC):** ★ Carmine's Times Square (200 W 44th, 212-221-3800, family-style),
+  alts Benihana W 56th (teppanyaki), Fogo de Chão W 53rd (open Xmas Eve 2025), Rubirosa (Nolita, group form 8–22).
+  **Book NOW by phone/email** — 9 exceeds most online limits; ask set menu / deposit / cancellation.
+- 25.12: Wollman skating → Times Square → Empire State → Chinatown dinner ~20:15 (reserve 2–3 wks ahead).
+- 26.12: 9/11 → Century 21 (post-Xmas sales) → Hudson Eats → SI ferry → Brooklyn Bridge → DUMBO (Juliana's).
+- 27.12: Intrepid Museum morning. 28.12: Woodbury Common outlets (option A) or Manhattan day; **Bar Mitzvah farewell dinner Keens 18:00**.
+- Optional: Radio City Christmas Spectacular 22.12 evening (run 4.11.26–4.1.27, from $55).

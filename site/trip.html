@@ -66,6 +66,10 @@
   .timeline li.game .dtext{font-weight:700;color:var(--brand)}
   .timeline li.ticket .d::before{background:#1f7a44}
   .timeline li.ticket .t{color:#1f7a44}
+  .timeline li.food .d::before{background:#c2410c}
+  .timeline li.food .t{color:#c2410c}
+  .timeline li.shop .d::before{background:#7c3aed}
+  .timeline li.shop .t{color:#7c3aed}
   .timeline li.free .d::before{background:#b9c3d3}
   .timeline li.free .t{color:var(--muted)}
 
@@ -121,7 +125,7 @@
 
 <footer>היומן נטען מנתוני הטיול (<code>data/data.js</code>) · עודכן 25 באוגוסט 2026</footer>
 
-<script src="../data/data.js?v=20261026"></script>
+<script src="../data/data.js?v=20261026b"></script>
 <script>
   /* TRIP מוגדר ב-data.js עם const — לכן הוא לא נמצא על window, אלא בסקופ הגלובלי */
   const days = (typeof TRIP !== 'undefined') ? TRIP : (window.TRIP || []);
@@ -183,6 +187,9 @@
     if(d.experience){ const e=d.experience;
       info+=`<div class="info"><h4>🤝 <span class="ttl">חוויה</span>${statusBadge(e.status)}</h4>`
         + dl([["מה",e.name],["דרך",e.provider]])+`</div>`; }
+    if(d.dining){ const f=d.dining;
+      info+=`<div class="info"><h4>🍽️ <span class="ttl">איפה אוכלים</span>${f.status==='לא נדרש'?'':statusBadge(f.status)}</h4>`
+        + dl([["המלצה",f.meal],["הזמנה",f.book]])+`</div>`; }
     if(d.flight){ const f=d.flight;
       info+=`<div class="info"><h4>✈️ <span class="ttl">טיסה — ${esc(f.dir||'')}</span>${statusBadge(f.status)}</h4>`
         + dl([["חברה",f.airline],["טיסה",f.flightNo],["המראה",f.dep],["נחיתה",f.arr],["אישור",f.pnr],["מחיר",f.price]])+`</div>`; }
