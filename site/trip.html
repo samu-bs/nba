@@ -121,7 +121,7 @@
 
 <footer>היומן נטען מנתוני הטיול (<code>data/data.js</code>) · עודכן 25 באוגוסט 2026</footer>
 
-<script src="../data/data.js?v=20260825"></script>
+<script src="../data/data.js?v=20261026"></script>
 <script>
   /* TRIP מוגדר ב-data.js עם const — לכן הוא לא נמצא על window, אלא בסקופ הגלובלי */
   const days = (typeof TRIP !== 'undefined') ? TRIP : (window.TRIP || []);
@@ -191,7 +191,7 @@
         + dl([["אמצעי",t.mode],["מסלול",t.route],["משך",t.duration],["אסמכתה",t.ref],["מחיר",t.price]])+`</div>`; }
     if(d.hotel){ const h=d.hotel;
       info+=`<div class="info"><h4>🏨 <span class="ttl">לינה</span>${statusBadge(h.status)}</h4>`
-        + dl([["מלון",h.name],["אזור",h.area],["צ'ק-אין",h.checkin],["צ'ק-אאוט",h.checkout],["לילות",h.nights],["מחיר/לילה",h.pricePerNight]])+`</div>`; }
+        + dl([["מלון",h.name],["אזור",h.area],["צ'ק-אין",h.checkin],["צ'ק-אאוט",h.checkout],["לילות",h.nights],["אישור",h.confirmation],["מחיר/לילה",h.pricePerNight]])+`</div>`; }
 
     const noteCls = (d.notes && /⚠️/.test(d.notes)) ? 'note warn' : 'note';
     const hotelLine = d.hotel && !isTBD(d.hotel.name) ? `🏨 ${esc(d.hotel.name)} · ` : '';

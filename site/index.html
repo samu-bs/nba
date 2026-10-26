@@ -73,7 +73,7 @@
 <div class="hero">
   <div class="tag">🇺🇸 New York · Philadelphia · Dec 20–28, 2026</div>
   <h1>🏀 טיול בר מצווה NBA</h1>
-  <p>חגיגת בר מצווה סביב משחקי NBA בניו יורק — שני משחקי ניקס ב-MSG (כולל משחק הקריסמס), 76ers בפילדלפיה, ונטס ב-Barclays עם הקרבה הכי גדולה לשחקנים. הטיסות ושלושה מתוך ארבעת המשחקים כבר שולמו.</p>
+  <p>חגיגת בר מצווה סביב משחקי NBA בניו יורק — שני משחקי ניקס ב-MSG (כולל משחק הקריסמס), 76ers בפילדלפיה, ונטס ב-Barclays עם הקרבה הכי גדולה לשחקנים. הטיסות, כל ארבעת המשחקים, שני המלונות והרכבת לפילדלפיה כבר סגורים.</p>
 </div>
 
 <div class="stats">
@@ -107,7 +107,7 @@
       <tbody id="purchBody"></tbody>
     </table>
     <div class="bigtot">
-      <div><div class="n" id="totAll"></div><div class="l">סה"כ שולם עד כה (3 נוסעים)</div></div>
+      <div><div class="n" id="totAll"></div><div class="l">סה"כ שולם / הוזמן (3 נוסעים)</div></div>
       <div><div class="n" id="totPP"></div><div class="l">לאדם</div></div>
     </div>
   </div>
@@ -136,9 +136,9 @@
   <p class="note" id="schednote" style="margin-top:12px"></p>
 </div>
 
-<footer>גרסה 3 · עודכן 25 באוגוסט 2026 · אתר תכנון פנימי למשפחה</footer>
+<footer>גרסה 4 · עודכן 26 באוקטובר 2026 · אתר תכנון פנימי למשפחה</footer>
 
-<script src="../data/data.js?v=20260825"></script>
+<script src="../data/data.js?v=20261026"></script>
 <script>
   const tb = document.getElementById('statusBody');
   STATUS.forEach(s=>{
@@ -160,7 +160,7 @@
        <td class="num">${usd(p.total)}<div class="note" style="font-weight:400">${p.unit||''}</div></td></tr>`);
   });
   pb.insertAdjacentHTML('beforeend',
-    `<tr class="totrow"><td colspan="3">סה"כ שולם</td><td class="num">${usd(sum)}</td></tr>`);
+    `<tr class="totrow"><td colspan="3">סה"כ שולם / הוזמן</td><td class="num">${usd(sum)}</td></tr>`);
   document.getElementById('totAll').textContent = usd(sum);
   document.getElementById('totPP').textContent = usd(sum/3);
 

@@ -1,9 +1,9 @@
 # CLAUDE.md — NBA Bar Mitzvah Trip
 
-> **CURRENT STATE (2026-08-25):** Trip is **20–28 Dec 2026 (Christmas, not Hanukkah)**, **3 travelers final**.
-> Flights + 3 of 4 game tickets **bought and paid: $11,468.82 ($3,822.94 pp)**. See "PURCHASES CONFIRMED"
-> near the bottom for the authoritative figures — earlier sections above it record how we got here and
-> contain superseded estimates.
+> **CURRENT STATE (2026-10-26):** Trip is **20–28 Dec 2026 (Christmas)**, 3 travelers (+3 father+son pairs
+> on 21.12 and 23–24.12). Flights, **all 4 games, NYC hotel, Philly hotel and Amtrak are booked**:
+> **$16,048.11 committed ($5,349.37 pp, excl. Amtrak fare)**. See "BOOKINGS 2026-10-26" at the bottom for the
+> authoritative figures — earlier sections record how we got here and contain superseded estimates.
 
 ## Project goal
 Plan a Bar Mitzvah celebration trip to the USA centered on attending NBA games,
@@ -290,16 +290,37 @@ Consequences already applied to `data/data.js`:
   Counter-argument on record: three game nights in four days (25, 26, 27) is a heavy rhythm, and the budget
   is already over by $1,150–2,150 pp.
 
+## PHILADELPHIA OVERNIGHT + FRIENDS (decided 2026-10-18)
+- **Overnight in Philly 23→24.12** (replaces the 23:40 last-train plan). NYC room kept; take small bags only.
+- **3 father+son pairs join for Philadelphia only** → 9 people in Philly. In NYC they have their own lodging.
+- Trains: out Wed 23.12 ~09:00 Moynihan → 30th St ~10:30; back Thu 24.12 ~10:00 → NYC ~11:30.
+  Christmas Eve = peak travel → book now. 9 people: Business or Acela to sit together (Regional coach unreserved).
+- Hotel candidate: **Holiday Inn Express Philadelphia-Midtown**, 1305 Walnut St (9.2 Expedia, free breakfast
+  6:30–10:30, luggage storage, check-in 15:00 / out 11:00, 1 block from Broad Street Line → NRG direct ~15 min).
+  **4 rooms × 2 queens**: room 1 = Yossi + 13 + 15; rooms 2–4 = father + son. Yossi's first Booking search was
+  4 rooms × (1 adult + 1 child) — room 1 must be 1 adult + 2 children.
+- Arena is ~6 km from Center City (not walkable). Live! Casino & Hotel is adjacent but Center City wins (all sights there).
+- Arena bag policy: no backpacks; bags ≤14×14×6 in X-rayed; limited paid lockers. Go to the game bag-free.
+- Half-day route: 11:15 Rocky steps → 12:15 Parkway/LOVE Park/Christmas Village (runs to 24.12) → 13:15 Reading
+  Terminal → 14:30 Liberty Bell → 15:00 Independence Hall (timed tickets required in Dec, recreation.gov $1;
+  NOT required on 24.12, open 9–15) → 16:30 hotel.
+- **OPEN:** friends need 6 game tickets (ours: Lower Level 102 rows 19–20). **Sixers group experiences
+  (High-Five Tunnel, Anthem Buddies, Captains Huddle, Court of Dreams) need 10+** — 9 people; ask Group Sales
+  (sixers.formstack.com/forms/ticket_request_form_groups) whether buying 10 via groups unlocks one.
+- **2026-10-19: the 3 father+son pairs ALSO attend the 21.12 Nets–Portland game at Barclays** → 9 people.
+  Group-sales emails drafted to Nets (groups@brooklynnets.com) and Sixers asking if buying 10 via groups unlocks
+  a kids experience. Courtside decision waits for the Nets reply.
+- 24.12 NYC: museum moves to ~12:30 (Met closes ~17:00, AMNH ~17:30).
+
 ## Still-open questions
 0. ✅ RESOLVED — dates locked, Option C (20–28.12), Christmas not Hanukkah.
 1. ✅ RESOLVED — Philadelphia added (76ers day-trip from NYC), tickets bought.
 2. ✅ RESOLVED — party is 3 final; extra parent + child not joining.
-3. **21.12 Barclays: courtside or lower bowl (sections 3/16)?** The only remaining decision with real cost.
-   No urgency — Monday night vs a weak opponent, resale softens closer to tip-off. Decide in November.
-4. Hotel not yet booked — largest remaining line item (~$1,330–1,600 pp). Book 2–3 free-cancellation options to compare.
+3. ✅ RESOLVED 2026-10-25 — 21.12 = lower bowl Section 16 Row 11 via Nets Group Sales (10 tickets). No courtside.
+4. ✅ RESOLVED 2026-10 — NYC hotel NoMo SoHo, 8 nights.
 5. **⚪ Add the 26.12 Nets–Pelicans game at Barclays as a 5th game?** Unlocked by the Shabbat clarification.
    Flagged as an option; decide in November with the 21.12 tickets.
-6. Overnight in Philadelphia on 23.12 (~$200) instead of the 23:40 last train back?
+6. ✅ RESOLVED 2026-10-18 — overnight in Philadelphia 23→24.12 (see "PHILADELPHIA OVERNIGHT + FRIENDS" below).
 7. How much to invest in paid meet&greet? Current answer: nothing — no credible product exists. Money is
    better spent on the $75 Pre-Game Pass and the Garden of Dreams auctions.
 
@@ -310,3 +331,23 @@ Consequences already applied to `data/data.js`:
 ## Working notes
 - Final deliverables go in this folder (/Projects/NBA).
 - Revisit and lock specifics once the 2026-27 schedule is published (~Aug 2026).
+
+## ✅ BOOKINGS 2026-10-26 — receipts verified
+| Item | Detail | Our share (3 pax) |
+|---|---|---|
+| 🏀 21.12 Nets–Portland @ Barclays | **Section 16 Row 11, seats 1–10** · 10 tickets × $92 = $920 · Nets Group Sales, rep **Ricky Hauser 718-942-9567**, account 78307421, invoice 25.10.26 · all sales final · 9 attendees (us + 3 father+son pairs) + 1 spare | **$276.00** |
+| 🏨 NoMo SoHo, 9 Crosby St, SoHo | 20.12 (from 16:00) → 28.12 (until 11:00), 8 nights, Double Deluxe 2 full beds, no breakfast · Booking.com **6692267425** · $4,382.50 incl. 14.75% tax, $43/night resort fee, city tax; Booking.com pays $276.06 → **net $4,106.44** (~$513/night) · free cancel until 2 days before arrival · refundable deposit $150/night (max $1,050) at check-in | **$4,106.44** |
+| 🛏️ Holiday Inn Express Philadelphia-Midtown | 23.12 (15:00) → 24.12 (11:00), 4 rooms / 9 guests, breakfast incl., $822.33 total · Booking.com **6426025068** · pay at hotel · free cancel until 22.12 16:00 · our room = Standard 2 Queen $196.85; friends = 3× King $208.49 | **$196.85** |
+| 🚆 Amtrak | Res **4DB750** · Keystone **643** 23.12 09:28 Moynihan → 10:50 30th St · Keystone **644** 24.12 09:45 → 11:05 · 3 coach seats · no changes, 30% cancel fee · fare NOT shown on eTicket | **? (ask Yossi)** |
+
+**Committed total: $16,048.11 = $5,349.37 pp** (excl. Amtrak). Forecast ~$6,000 pp excl. food, ~$6,700–6,900 incl. food.
+vs NBATrips $7,000: ~$1,000 pp cheaper.
+
+⚠️ Open issues found in the receipts:
+- **Ethan's Amtrak ticket is CHILD fare** (Amtrak child = ages 2–12; both sons are 13+). Ticket is no-change. Call Amtrak.
+- **Both hotel bookings are in Dalia's name** (not traveling). Change guest names (NYC → Yossi; Philly → each father).
+- Friends' train tickets are not on our reservation — confirm they're on 643/644.
+- Nets: ask Ricky whether the 10-ticket group order unlocks a kids experience / Bar Mitzvah scoreboard message / Pre-Game Pass add-on; settle the 10th ticket.
+- Still TBD: Pre-Game Pass (on sale ~9–23 Nov), MSG tour 22.12, Independence Hall ×9, ESTA, insurance, friends' 23.12 tickets, 26.12 option.
+- SoHo base: Canal St (A/C/E → MSG/Moynihan ~10 min), Broadway–Lafayette (B/D → Barclays ~20 min); Chinatown 10 min walk.
+- Site updated: `data/data.js` (STATUS/PURCHASES/BUDGET/TRIP), `site/planning.html`, `site/index.html`, `site/trip.html` (shows hotel confirmation), master doc.
